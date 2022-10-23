@@ -1,2 +1,2 @@
-# Chandra-Booking-WebApp-Frontend
+# chandra-booking-webapp-frontend
 Software Architecture and Design KMITL Project
