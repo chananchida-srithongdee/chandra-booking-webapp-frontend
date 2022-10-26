@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav className={`${styles.navContainer} ${scrollY ? 'bgfade' : 'bgfadeout'}`}>
             <div className={styles.container}>
                 <div className="flex items-center">
-                    <img src={logo} alt="chandra" className="cursor-pointer sm:w-[184px] w-[150px] object-contained mr-20" />
+                    <img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" />
                     <div className={styles.menuText}>Discover Chandra</div>
                     <div className={styles.menuText}>Events</div>
                     <div className={styles.menuText}>Offers</div>
