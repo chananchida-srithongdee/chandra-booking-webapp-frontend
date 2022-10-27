@@ -1,4 +1,4 @@
-# chandra-booking-webapp-frontend
+# Chandra Booking WebApp (Frontend)
 Software Architecture and Design KMITL Project
 
 # Getting Started with Create React App and Redux
