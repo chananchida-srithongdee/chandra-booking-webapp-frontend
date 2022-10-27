@@ -3,6 +3,7 @@
 ### Project Title : Chandra Booking WebApp (Frontend)
 ### Project Objective : Assignment in Software Architecture and Design subject of KMITL.
 ### Project Description 
+- Currently Developing Project!!
 - Hotel booking web application for customer
 - using React Redux, Tailwind and Material-UI
 
