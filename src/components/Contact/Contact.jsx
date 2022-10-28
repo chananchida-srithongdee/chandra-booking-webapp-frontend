@@ -28,7 +28,7 @@ const ContactUs = () => {
             Contact us and we will get back to you within 24 hours.
           </span>
         </div>
-        <div className={`${styles.flexCenter} w-full`}>
+        <div className={`${styles.flexCenter} w-full mt-[2rem]`}>
           <form
             className="flex flex-col justify-start gap-4 w-full px-[20rem]"
             onSubmit={handleSubmit}
@@ -87,6 +87,7 @@ const ContactUs = () => {
                 required
                 multiline
                 fullWidth
+                inputProps={{ style: { fontSize: "12px" } }}
               />
             </div>
             <div className={`${styles.flexCenter}`}>
@@ -95,6 +96,39 @@ const ContactUs = () => {
               </button>
             </div>
           </form>
+        </div>
+
+        <div className={`${styles.flexCenter} flex-col mt-[2rem]`}>
+          <span className={`${styles.secondaryText}`}>
+            Direct Dial and Email Contacts
+          </span>
+          <div className={`${styles.flexCenter} flex-col pl-[22rem]`}>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Location: 89 Moo 4, Koh Kood Sub-District, Koh Kood District, Trat
+              23000, Thailand
+            </span>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Email: chandra@gmail.com
+            </span>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Phone: 026-549-2261
+            </span>
+          </div>
+        </div>
+
+        <div className={`${styles.flexCenter} flex-col`}>
+          <span className={`${styles.secondaryText}`}>Resort Management</span>
+          <div className={`${styles.flexCenter} flex-col pl-[22rem]`}>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Chananchida Srithongdee
+            </span>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Phone: 095 507 70665
+            </span>
+            <span className="w-[897px] text-left text-[15px] mt-[.5rem]">
+              Email: Chananchida@gmail.com
+            </span>
+          </div>
         </div>
       </div>
     </div>
