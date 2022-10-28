@@ -1,5 +1,5 @@
 import React from 'react'
-import { bgDiscover,disFood, disMassage,disYoga } from '../../images'
+import { bgDiscover,disFood, disMassage,disYoga } from './images'
 import styles from './styles.js';
 const Discover = () => {
     return (

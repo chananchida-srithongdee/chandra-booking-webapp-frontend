@@ -1,5 +1,5 @@
 import React from 'react'
-import { offer0_2,offer3_0, offer3_1,offer3_2} from '../../images'
+import { offer0_2,offer3_0, offer3_1,offer3_2} from './images'
 
 import styles from './styles.js';
 const Offer2 = () => {
