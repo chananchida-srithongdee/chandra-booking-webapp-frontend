@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
 import Header from '../Header/Header.jsx';
 import Details from "./Details/Details.jsx";
 import { discoverData } from "./text.js";
 import { bgDiscover } from "../../images/index.js";
 
-const Discover = () => {
+const Discover = ({ setNavbarBg }) => {
+
+  useEffect(() => {
+      setNavbarBg('')
+  }, []);
+
   return (
     <div className="w-full">
       <Header imgSrc={bgDiscover} imgAlt="chandra resort" />

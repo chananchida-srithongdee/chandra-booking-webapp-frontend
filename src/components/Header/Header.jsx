@@ -4,7 +4,7 @@ import text from './text.js';
 
 const Header = ({ imgSrc, imgAlt, displayText=true, headText=text.head, detailText=text.detail, buttonText=text.button }) => {
   return (
-    <div className="bg-primary h-[800px] relative">
+    <div className="bg-primary h-[800px] relative caret-transparent">
       <img src={imgSrc} alt={imgAlt} className="w-full h-[800px] object-cover" />
       { displayText && (
         <div className="absolute ss:bottom-24 bottom-48 sm:left-24 left-10">
