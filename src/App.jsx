@@ -6,9 +6,6 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Discover from './components/Discover/Discover.jsx';
 import Offer from './components/Offer/Offer.jsx';
 import Offer1 from './components/Offer/Offer1.jsx';
-import Offer2 from './components/Offer/Offer2.jsx';
-import Offer3 from './components/Offer/Offer3.jsx';
-import Offer4 from './components/Offer/Offer4.jsx';
 import Booking from './components/Booking/Booking.jsx';
 import Superior from './components/Booking/Superior/Superior.jsx';
 import Deluxe from './components/Booking/Deluxe/Deluxe.jsx';
@@ -32,9 +29,9 @@ import { homeUrl, discoverUrl, offerUrl, offer1Url, offer2Url, offer3Url, offer4
                 
                 <Route path={offerUrl} exact element={<Offer setNavbarBg={setNavbarBg} />} />
                 <Route path={offer1Url} exact element={<Offer1 />} />
-                <Route path={offer2Url} exact element={<Offer2 />} />
+                {/* <Route path={offer2Url} exact element={<Offer2 />} />
                 <Route path={offer3Url} exact element={<Offer3 />} />
-                <Route path={offer4Url} exact element={<Offer4 />} />
+                <Route path={offer4Url} exact element={<Offer4 />} /> */}
 
                 <Route path={bookingUrl} exact element={<Booking />} />
                 <Route path={booking1Url} exact element={<Superior />} />

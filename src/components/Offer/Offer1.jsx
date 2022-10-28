@@ -1,5 +1,5 @@
 import React from 'react'
-import { offer0_0,offer1_0, offer1_1,offer1_2} from './images'
+import { offer1, offer1_0, offer1_1,offer1_2} from '../../images'
 
 import styles from '../Offer/styles.js';
 const Offer1 = () => {
@@ -25,7 +25,7 @@ const Offer1 = () => {
                     
                 </div>
                 <div>
-                    <img src={offer0_0} alt="offer0_0"className="md:rounded-lg" />
+                    <img src={offer1} alt="offer0_0"className="md:rounded-lg" />
                 </div>
             </div>
             <div >
