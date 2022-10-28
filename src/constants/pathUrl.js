@@ -1,5 +1,6 @@
 export const homeUrl = '/home';
 export const discoverUrl = '/discover';
+export const contactUsUrl = '/contact-us';
 export const offerUrl = '/offer';
 export const offer1Url = '/offer/1';
 export const offer2Url = '/offer/2';

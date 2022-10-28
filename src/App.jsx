@@ -14,8 +14,9 @@ import Superior from './components/Booking/Superior/Superior.jsx';
 import Deluxe from './components/Booking/Deluxe/Deluxe.jsx';
 import BeachHouse from './components/Booking/BeachHouse/BeachHouse.jsx';
 import FamilyPremium from './components/Booking/FamilyPremium/FamilyPremium.jsx';
+import ContactUs from './components/Contact/Contact.jsx';
 import { homeUrl, discoverUrl,offerUrl,offer1Url,offer2Url,offer3Url,offer4Url,
-  bookingUrl,booking1Url,booking2Url,booking3Url,booking4Url } from './constants/pathUrl.js';
+  bookingUrl,booking1Url,booking2Url,booking3Url,booking4Url, contactUsUrl } from './constants/pathUrl.js';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <div>
             <Navbar />
             <Routes>
+                <Route path={contactUsUrl} exact element={<ContactUs />} />
                 <Route path={discoverUrl} exact element={<Discover />} />
                 <Route path={homeUrl} exact element={<Home />} />
                 <Route path={offerUrl} exact element={<Offer />} />
@@ -37,10 +39,10 @@ const App = () => {
                 <Route path={booking3Url} exact element={<BeachHouse />} />
                 <Route path={booking4Url} exact element={<FamilyPremium />} />
 
-                <Route
+                {/* <Route
                     path="*"
                     element={<Navigate to="/home" replace />}
-                />
+                /> */}
             </Routes>
         </div>
     </BrowserRouter>
