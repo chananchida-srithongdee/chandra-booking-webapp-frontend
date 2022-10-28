@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react'
 import { logo, close, menu } from '../../images';
 import styles from './styles';
 import { Link } from 'react-router-dom';
-import { offerUrl } from '../../constants/pathUrl'
+import { homeUrl,offerUrl,discoverUrl,contactUsUrl,bookingUrl } from '../../constants/pathUrl'
 
 const Navbar = ({ navbarBg }) => {
     const [toggle, setToggle] = useState(false);
@@ -28,13 +28,17 @@ const Navbar = ({ navbarBg }) => {
         <nav className={`${styles.navContainer} ${navbarBg} ${!navbarBg && (scrollY ? 'bgfade' : 'bgfadeout')}`}>
             <div className={styles.container}>
                 <div className="flex items-center">
-                    <img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" />
-                    <div className={styles.menuText}>Discover Chandra</div>
+                    <div>
+                        <Link to ={homeUrl}><img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20"  /></Link>
+                    </div>
+                    
+                    <div className={styles.menuText}><Link to ={discoverUrl}>Discover Chandra</Link></div>
                     <div className={styles.menuText}>Events</div>
                     <div className={styles.menuText}><Link to={offerUrl}>Offers</Link></div>
-                    <div className={`${styles.menuText} mr-0`}>Contact Us</div>
+                    <div className={`${styles.menuText} mr-0`}> <Link to={contactUsUrl}>Contact Us</Link></div>
                 </div>
-                <div className={styles.checkRates}>Check Rates</div>
+                
+                <Link to={bookingUrl}><div className={styles.checkRates}>Check Rates</div></Link>
 
                 <div className="lg:hidden flex justify-end items-center">
                     <img src={toggle ? close : menu} alt="menu" className="cursor-pointer w-[28px] h-[28px] object-contain opacity-80" onClick={() => setToggle((prev) => !prev)} />

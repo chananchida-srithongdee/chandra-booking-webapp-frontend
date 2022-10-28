@@ -18,7 +18,7 @@ const Offer = ({ setNavbarBg }) => {
                 <hr className=''></hr>
             </div>
 
-            <h3 className="text-justify text-lg color-[484848] container mx-auto my-10 "> Discover a world of possibilities at Chandra. Featuring a wide variety of hotels and resorts in top destinations, we give you the best offers guaranteed.</h3>
+            <h3 className="text-center text-lg color-[484848] container mx-auto my-10 "> Discover a world of possibilities at Chandra. Featuring a wide variety of hotels and resorts in top destinations, we give you the best offers guaranteed.</h3>
 
             <div className="flex flex-row flex-wrap space-evenly space-x-10 justify-center  ">
                 <div className="flex flex-col ">
