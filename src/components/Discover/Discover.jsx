@@ -1,16 +1,6 @@
 import React from 'react'
 import { bgDiscover,disFood, disMassage,disYoga } from '../../images'
-// import Container from 'react-bootstrap/Container';
-
-// import { Container } from 'react-bootstrap';
-// import { useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { TextField, InputAdornment, IconButton, Button } from '@mui/material';
-// import { Visibility, VisibilityOff } from '@mui/icons-material';
-
 import styles from './styles.js';
-// import { signin } from '../../actions/auth.js';
-// import { chandra1, logoblack, usericon, lockicon } from '../../images/index.js';
 const Discover = () => {
     return (
         <div className="w-full">
@@ -33,7 +23,7 @@ const Discover = () => {
                         <div>
                             <h2 className="text-justify text-2xl mt-5 container mx-auto px-5" > Local Flavours, Global Cuisines </h2>
                             <h3 className="text-justify text-lg mt-5 container mx-auto px-5">Discover the perfect balance of fire and spices in Thai cuisine. Indulge in finely crafted cocktails at a bar. Unwind at a laidback beach club, where you savour the freshest grilled seafood and panoramic views of the ocean. At Chandra, our dining experiences are all about creating the unforgettable.</h3>
-                            <h3 className="text-justify text-lg mt-5 container mx-auto px-5">Catering to everyone’s tastes, Centara makes it a priority to serve a mix of international and local flavours that speak true to the destination. We see to every detail so you can make the most of every dining experience to connect with family, friends or colleagues. Where remarkable locations and delicious cuisines come together, Chandra lets you share meaningful moments.</h3>
+                            <h3 className="text-justify text-lg mt-5 container mx-auto px-5">Catering to everyone’s tastes, Chandra makes it a priority to serve a mix of international and local flavours that speak true to the destination. We see to every detail so you can make the most of every dining experience to connect with family, friends or colleagues. Where remarkable locations and delicious cuisines come together, Chandra lets you share meaningful moments.</h3>
                         </div>
                     </div>
                     
@@ -64,7 +54,7 @@ const Discover = () => {
                             <h2 className="text-justify text-2xl mt-5 container mx-auto px-5" > How Health And Wellness Can Be Part Of Your Stay With Us
  </h2>
                             <h3 className="text-justify text-lg mt-5 container mx-auto px-5">
-A holiday or business trip doesn’t have to be a break from health. Centara now gives you more ways to take care of yourself during your stay with us.</h3>
+A holiday or business trip doesn’t have to be a break from health. Chandra now gives you more ways to take care of yourself during your stay with us.</h3>
                             <h3 className="text-justify text-lg mt-5 container mx-auto px-5">Our Stay Well programme includes tools to help you exercise more conveniently, sleep more comfortably, and eat more healthily. It’s more than just a fitness centre. It includes exercise aids in your room, comfortable pillows and sleepwear, special menus to choose from and more.</h3>
                         </div>
                     </div>
@@ -78,57 +68,3 @@ A holiday or business trip doesn’t have to be a break from health. Centara now
 }
 
 export default Discover
-
-
-
-
-// const Auth = () => {
-
-
-//     return (
-//         <div className="bg-primary w-full h-full absolute top-0">
-//             <div className={`${styles.flexCenter} w-full h-full`}>
-//                 <div className={`${styles.flexCenter} sm:w-[810px] sm:h-[500px] h-[400px] bg-white drop-shadow-lg rounded-lg overflow-hidden`}>
-//                     <div className="sm:w-1/2 sm:mb-10"> 
-//                         <div className={`${styles.flexCenter} mb-9`}>
-//                             <img src={logoblack} alt="chandra logo" className="object-contained w-[190px] caret-transparent" />
-//                         </div>
-//                         <form onSubmit={handleSubmit}>
-//                             <div className="px-10">
-//                                 <div className={`${styles.flexBetween} mb-6`}>
-//                                     <img src={usericon} alt="username icon" className={styles.icon} />
-//                                     <TextField name="username" label="Username" type="username" onChange={handleChange} variant="outlined" required fullWidth autoFocus />
-//                                 </div>
-//                                 <div className={`${styles.flexBetween}`}>
-//                                     <img src={lockicon} alt="lock icon" className={styles.icon} />
-//                                     <TextField name="password" label="Password" type={showPassword ? "text" : "password"} onChange={handleChange} variant="outlined" required fullWidth
-//                                         InputProps={{
-//                                             endAdornment: (
-//                                                 <InputAdornment position="end">
-//                                                     <IconButton onClick={handleShowPassword}>
-//                                                         {showPassword ? <VisibilityOff /> : <Visibility />}
-//                                                     </IconButton>
-//                                                 </InputAdornment>
-//                                             )
-//                                         }} 
-//                                     />
-//                                 </div>
-//                                 <div className="text-right text-[14px] text-red-600 mt-2">{errMsg}</div>
-//                             </div>
-//                             <div className="mt-5 w-full flex justify-end">
-//                                 <div className="mr-10 w-[130px]">
-//                                     <Button type="submit" fullWidth variant="contained" color="primary">Login</Button>
-//                                 </div>
-//                             </div>
-//                         </form>
-//                     </div>
-//                     <div className="w-1/2 h-full sm:flex hidden">
-//                         <img src={chandra1} alt="chandra resort" className="w-full h-full object-cover caret-transparent" />
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Auth
