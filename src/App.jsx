@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './components/Home/Home.jsx';
@@ -17,32 +17,35 @@ import FamilyPremium from './components/Booking/FamilyPremium/FamilyPremium.jsx'
 import ContactUs from './components/Contact/Contact.jsx';
 import { homeUrl, discoverUrl,offerUrl,offer1Url,offer2Url,offer3Url,offer4Url,
   bookingUrl,booking1Url,booking2Url,booking3Url,booking4Url, contactUsUrl } from './constants/pathUrl.js';
+  
+  const App = () => {
+    const [navbarBg, setNavbarBg] = useState('');
 
-const App = () => {
-  return (
+    return (
     <BrowserRouter>
         <div>
-            <Navbar />
+            <Navbar navbarBg={navbarBg}/>
             <Routes>
                 <Route path={contactUsUrl} exact element={<ContactUs />} />
                 <Route path={discoverUrl} exact element={<Discover />} />
                 <Route path={homeUrl} exact element={<Home />} />
-                <Route path={offerUrl} exact element={<Offer />} />
+                
+                <Route path={offerUrl} exact element={<Offer setNavbarBg={setNavbarBg} />} />
                 <Route path={offer1Url} exact element={<Offer1 />} />
                 <Route path={offer2Url} exact element={<Offer2 />} />
                 <Route path={offer3Url} exact element={<Offer3 />} />
                 <Route path={offer4Url} exact element={<Offer4 />} />
-                <Route path={offerUrl} exact element={<Offer />} />
+
                 <Route path={bookingUrl} exact element={<Booking />} />
                 <Route path={booking1Url} exact element={<Superior />} />
                 <Route path={booking2Url} exact element={<Deluxe />} />
                 <Route path={booking3Url} exact element={<BeachHouse />} />
                 <Route path={booking4Url} exact element={<FamilyPremium />} />
 
-                {/* <Route
+                <Route
                     path="*"
-                    element={<Navigate to="/home" replace />}
-                /> */}
+                    element={<Navigate to={homeUrl} replace />}
+                />
             </Routes>
         </div>
     </BrowserRouter>

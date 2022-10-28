@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { offer0_0,offer0_1, offer0_2,offer0_3} from './images'
 
 import styles from './styles.js';
-const Offer = () => {
+
+const Offer = ({ setNavbarBg }) => {
+
+    useEffect(() => {
+        setNavbarBg('bg-primary')
+    }, []);
+
     return (
         <div >
             <div className="h-[200px]"></div>{/* เว้นพื้นที่ลงมาจากด้านบนสุดPage*/}

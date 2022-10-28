@@ -5,7 +5,7 @@ import styles from './styles';
 import { Link } from 'react-router-dom';
 import { offerUrl } from '../../constants/pathUrl'
 
-const Navbar = () => {
+const Navbar = ({ navbarBg }) => {
     const [toggle, setToggle] = useState(false);
     const [scrollY, setScrollY] = useState(false);
 
@@ -25,7 +25,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className={`${styles.navContainer} ${scrollY ? 'bgfade' : 'bgfadeout'}`}>
+        <nav className={`${styles.navContainer} ${navbarBg} ${!navbarBg && (scrollY ? 'bgfade' : 'bgfadeout')}`}>
             <div className={styles.container}>
                 <div className="flex items-center">
                     <img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" />
