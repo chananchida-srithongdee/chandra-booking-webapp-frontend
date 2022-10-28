@@ -2,6 +2,8 @@ import React, { useState, useEffect} from 'react'
 
 import { logo, close, menu } from '../../images';
 import styles from './styles';
+import { Link } from 'react-router-dom';
+import { offerUrl } from '../../constants/pathUrl'
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -29,7 +31,7 @@ const Navbar = () => {
                     <img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" />
                     <div className={styles.menuText}>Discover Chandra</div>
                     <div className={styles.menuText}>Events</div>
-                    <div className={styles.menuText}>Offers</div>
+                    <div className={styles.menuText}><Link to={offerUrl}>Offers</Link></div>
                     <div className={`${styles.menuText} mr-0`}>Contact Us</div>
                 </div>
                 <div className={styles.checkRates}>Check Rates</div>
