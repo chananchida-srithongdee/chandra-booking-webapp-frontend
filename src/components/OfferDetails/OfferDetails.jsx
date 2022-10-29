@@ -3,14 +3,16 @@ import { useParams, Link } from 'react-router-dom';
 
 import styles from './styles.js';
 import { offers } from '../../constants/text.js';
-import { bookingUrl } from '../../constants/pathUrl.js';
+import { bookingUrl, offerUrl } from '../../constants/pathUrl.js';
+import Thumbnail from '../Thumbnail/Thumbnail.jsx';
 // import { getOffer } from '../../actions/offers.js';
 
 const OfferDetails = ({ setNavbarBg }) => {
 
-    // const { offer, isLoading } = useSelector((state) => state.offers); 
+    // const { offer, offers, isLoading } = useSelector((state) => state.offers); 
     const { id } = useParams();
     const offer = offers.filter(({ _id }) => _id === id)[0];
+    const otherOffer = offers.filter(({ _id }) => _id !== id);
 
     // useEffect(() => {
     //     dispatch(getOffer(id));
@@ -46,9 +48,19 @@ const OfferDetails = ({ setNavbarBg }) => {
                 <ul className="list-disc ss:text-xl text-lg mt-7 ml-7">
                     {offer.detailList?.map((dlist, index) => (<li key={index}>{dlist}</li>))}
                 </ul>
-                <div className='flex flex-row flex-wrap justify-center items-center mt-14 mb-32'>
+                <div className='flex flex-row flex-wrap justify-center items-center mt-14 mb-10'>
                     {offer.otherImg?.map((img, index) => (
                         <img src={img} key={index} alt="chandra service" className='ss:w-[440px] w-11/12 ss:h-[300px] h-[200px] object-cover rounded-lg ss:mx-5 mx-0 my-5' />
+                    ))}
+                </div>
+            </div>
+            <div className="w-5/6 mb-28">
+                <div className="border-t-[1px] border-primary/20 text-3xl pt-7 font-bold">Other Offers :</div>
+                <div className="flex xl:hover:overflow-x-scroll overflow-x-scroll mt-5 pb-5">
+                    {otherOffer.map(({ mainImg, _id, title, detail }) => (
+                        <div key={_id}>
+                            <Thumbnail imgW="270px" imgH="340px" imgSrc={mainImg} imgAlt="chandra service" head={title} detail={detail} linkTo={`${offerUrl}/details/${_id}`} />
+                        </div>
                     ))}
                 </div>
             </div>

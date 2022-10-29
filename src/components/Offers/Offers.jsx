@@ -21,9 +21,7 @@ const Offers = ({ setNavbarBg }) => {
 
             <div className="w-4/5 mx-auto flex flex-wrap justify-center items-center">
                 {offers.map((offer) => (
-                    <div key={offer._id}>
-                        <Offer offer={offer} />
-                    </div>
+                    <Offer offer={offer} />
                 ))}
             </div>
             <div className='my-20'></div>
