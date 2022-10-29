@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react'
 import { logo, close, menu } from '../../images';
 import styles from './styles';
 import { Link } from 'react-router-dom';
-import { offerUrl, discoverUrl, contactUsUrl, homeUrl } from '../../constants/pathUrl'
+import { offerUrl, discoverUrl, contactUsUrl, homeUrl, bookingUrl } from '../../constants/pathUrl'
 
 
 const Navbar = ({ navbarBg }) => {
@@ -36,7 +36,7 @@ const Navbar = ({ navbarBg }) => {
                     <Link to={offerUrl}><div className={styles.menuText}>Offers</div></Link>
                     <Link to={contactUsUrl}><div className={`${styles.menuText} mr-0`}>Contact Us</div></Link>
                 </div>
-                <div className={styles.checkRates}>Check Rates</div>
+                <Link to={bookingUrl}><div className={styles.checkRates}>Check Rates</div></Link>
 
                 <div className="lg:hidden flex justify-end items-center">
                     <img src={toggle ? close : menu} alt="menu" className="cursor-pointer w-[28px] h-[28px] object-contain opacity-80" onClick={() => setToggle((prev) => !prev)} />

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 
 import styles from './styles';
-import { bgHome } from '../../images';
-import Header from '../Header/Header.jsx';
+import Slideshow from '../Slideshow/Slideshow.jsx';
 
 const Home = ({ setNavbarBg }) => {
   
@@ -13,7 +12,7 @@ const Home = ({ setNavbarBg }) => {
 
   return (
     <div className="w-full">
-      <Header imgSrc={bgHome} imgAlt="chandra resort" />
+      <Slideshow />
     </div>
   )
 }

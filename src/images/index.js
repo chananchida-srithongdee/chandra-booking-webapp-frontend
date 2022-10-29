@@ -2,9 +2,11 @@ import close from "./close.svg";
 import menu from "./menu.svg";
 
 import logo from "./home/logo.svg";
-import bgHome from "./home/bg-home.svg";
 
-import bgDiscover from "./discover/bg-discovery.svg";
+import bg1 from "./slideshow/bg1.svg"
+import bg2 from "./slideshow/bg2.svg"
+import bg3 from "./slideshow/bg3.svg"
+
 import disFood from "./discover/discover-food.jpg";
 import disMassage from "./discover/discover-massage.jpg"
 import disYoga from "./discover/discover-yoga.jpg"
@@ -27,14 +29,13 @@ import offer4_1 from "./offer/offer4_1.jpg"
 import offer4_2 from "./offer/offer4_2.jpg"
 
 
+
 export {
   close,
   menu,
 
   logo,
-  bgHome,
 
-  bgDiscover,
   disFood,
   disMassage,
   disYoga,
@@ -56,3 +57,5 @@ export {
   offer4_1,
   offer4_2,
 };
+
+export const slideImages = [bg1, bg2, bg3];
