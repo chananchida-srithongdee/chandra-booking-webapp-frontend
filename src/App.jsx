@@ -15,8 +15,8 @@ import Deluxe from './components/Booking/Deluxe/Deluxe.jsx';
 import BeachHouse from './components/Booking/BeachHouse/BeachHouse.jsx';
 import FamilyPremium from './components/Booking/FamilyPremium/FamilyPremium.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
-import { homeUrl, discoverUrl,offerUrl,offer1Url,offer2Url,offer3Url,offer4Url,
-  bookingUrl,booking1Url,booking2Url,booking3Url,booking4Url, contactUsUrl } from './constants/pathUrl.js';
+import { homeUrl, discoverUrl, offerUrl, offer1Url, offer2Url, offer3Url, offer4Url,
+  bookingUrl, booking1Url, booking2Url, booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
   
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');
@@ -26,9 +26,9 @@ import { homeUrl, discoverUrl,offerUrl,offer1Url,offer2Url,offer3Url,offer4Url,
         <div>
             <Navbar navbarBg={navbarBg}/>
             <Routes>
-                <Route path={contactUsUrl} exact element={<ContactUs />} />
-                <Route path={discoverUrl} exact element={<Discover />} />
-                <Route path={homeUrl} exact element={<Home />} />
+                <Route path={contactUsUrl} exact element={<ContactUs setNavbarBg={setNavbarBg} />} />
+                <Route path={discoverUrl} exact element={<Discover setNavbarBg={setNavbarBg} />} />
+                <Route path={homeUrl} exact element={<Home setNavbarBg={setNavbarBg} />} />
                 
                 <Route path={offerUrl} exact element={<Offer setNavbarBg={setNavbarBg} />} />
                 <Route path={offer1Url} exact element={<Offer1 />} />

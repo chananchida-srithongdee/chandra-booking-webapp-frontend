@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import bg from "../../images/contact-us/contact-us-bg.jpg";
 import styles from "./styles";
 import muiStyles from "./muiStyle";
 import { TextField } from "@mui/material";
 
-const ContactUs = () => {
+const ContactUs = ({ setNavbarBg }) => {
+
+  useEffect(() => {
+      setNavbarBg('')
+  }, []);
+
   const handleSubmit = () => {
     return;
   };
