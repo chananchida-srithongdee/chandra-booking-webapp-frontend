@@ -9,6 +9,7 @@ const Discover = ({ setNavbarBg }) => {
 
   useEffect(() => {
       setNavbarBg('')
+      window.scrollTo(0, 0)
   }, []);
 
   return (
@@ -17,7 +18,7 @@ const Discover = ({ setNavbarBg }) => {
       <div className="flex flex-col justify-center items-center my-20 sm:px-40 px-12">
         {discoverData.map((item, index) => (
             <div key={index}>
-              <Details imgSrc={item.image} imgAlt={item.alt} headText={item.head} subHeadText={item.subHead} detail1={item.detail1} detail2={item.detail2} />
+              <Details imgSrc={item.image} imgAlt="chandra service" headText={item.head} subHeadText={item.subHead} detail={item.detail} />
             </div>
           ))}
       </div>

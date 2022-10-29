@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./styles.js";
 
-const Details = ({ imgSrc, imgAlt, headText, subHeadText, detail1, detail2 }) => {
+const Details = ({ imgSrc, imgAlt, headText, subHeadText, detail }) => {
   return (
     <div className="w-full">
         <div className="text-center text-5xl font-bold text-primary">{headText}</div>
@@ -11,8 +11,7 @@ const Details = ({ imgSrc, imgAlt, headText, subHeadText, detail1, detail2 }) =>
             </div>
             <div className="lg:w-1/2 lg:pt-0 pt-4 lg:pl-14">
                 <p className={`${styles.detail} text-3xl`}>{subHeadText}</p>
-                <p className={`${styles.detail} text-lg`}>{detail1}</p>
-                <p className={`${styles.detail} text-lg`}>{detail2}</p>
+                <p className={`${styles.detail} text-lg whitespace-pre-line`}>{detail}</p>
             </div>
         </div>
     </div>
