@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer.jsx';
 import Discover from './components/Discover/Discover.jsx';
 import Offers from './components/Offers/Offers.jsx';
 import OfferDetails from './components/OfferDetails/OfferDetails.jsx';
@@ -12,8 +13,8 @@ import Deluxe from './components/Booking/Deluxe/Deluxe.jsx';
 import BeachHouse from './components/Booking/BeachHouse/BeachHouse.jsx';
 import FamilyPremium from './components/Booking/FamilyPremium/FamilyPremium.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
-import { homeUrl, discoverUrl, offerUrl, offer1Url, offer2Url, offer3Url, offer4Url,
-  bookingUrl, booking1Url, booking2Url, booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
+import { homeUrl, discoverUrl, offerUrl,bookingUrl, booking1Url, booking2Url, 
+  booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
   
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');
@@ -41,6 +42,7 @@ import { homeUrl, discoverUrl, offerUrl, offer1Url, offer2Url, offer3Url, offer4
                     element={<Navigate to={homeUrl} replace />}
                 />
             </Routes>
+            <Footer />
         </div>
     </BrowserRouter>
     
