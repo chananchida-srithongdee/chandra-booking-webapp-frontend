@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import Header from '../Header/Header.jsx';
 import Details from "./Details/Details.jsx";
-import { discoverData } from "./text.js";
+import { discoverData } from "../../constants/text.js";
 import { bgDiscover } from "../../images/index.js";
 
 const Discover = ({ setNavbarBg }) => {

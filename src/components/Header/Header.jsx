@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.js';
-import text from './text.js';
-import {bookingUrl} from '../../constants/pathUrl.js';
+import { headerDefault } from '../../constants/text.js';
 
-const Header = ({ imgSrc, imgAlt, displayText=true, headText=text.head, detailText=text.detail, buttonText=text.button }) => {
+const Header = ({ imgSrc, imgAlt, displayText=true, headText=headerDefault.head, detailText=headerDefault.detail, buttonText=headerDefault.button }) => {
   return (
     <div className="bg-primary h-[800px] relative caret-transparent">
       <img src={imgSrc} alt={imgAlt} className="w-full h-[800px] object-cover" />
