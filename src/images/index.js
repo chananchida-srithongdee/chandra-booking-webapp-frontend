@@ -28,6 +28,29 @@ import offer4_0 from "./offer/offer4_0.jpg"
 import offer4_1 from "./offer/offer4_1.jpg"
 import offer4_2 from "./offer/offer4_2.jpg"
 
+import beach0 from "./booking/beach/0.jpg";
+import beach1 from "./booking/beach/1.jpg";
+import beach2 from "./booking/beach/2.jpg";
+import beach3 from "./booking/beach/3.jpg";
+import beach4 from "./booking/beach/4.jpg";
+
+import deluxe0 from "./booking/deluxe/0.jpg";
+import deluxe1 from "./booking/deluxe/1.jpg";
+import deluxe2 from "./booking/deluxe/2.jpg";
+import deluxe3 from "./booking/deluxe/3.jpg";
+import deluxe4 from "./booking/deluxe/4.jpg";
+
+import family0 from "./booking/family/0.jpg";
+import family1 from "./booking/family/1.jpg";
+import family2 from "./booking/family/2.jpg";
+import family3 from "./booking/family/3.jpg";
+import family4 from "./booking/family/4.jpg";
+
+import sup0 from "./booking/superior/0.jpg";
+import sup1 from "./booking/superior/1.jpg";
+import sup2 from "./booking/superior/2.jpg";
+import sup3 from "./booking/superior/3.jpg";
+import sup4 from "./booking/superior/4.jpg";
 
 
 export {
@@ -56,6 +79,30 @@ export {
   offer4_0,
   offer4_1,
   offer4_2,
+
+  beach0,
+  beach1,
+  beach2,
+  beach3,
+  beach4,
+
+  deluxe0,
+  deluxe1,
+  deluxe2,
+  deluxe3,
+  deluxe4,
+
+  family0,
+  family1,
+  family2,
+  family3,
+  family4,
+
+  sup0,
+  sup1,
+  sup2,
+  sup3,
+  sup4,
 };
 
 export const slideImages = [bg1, bg2, bg3];

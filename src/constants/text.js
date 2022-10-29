@@ -1,4 +1,6 @@
-import { disFood, disMassage, disYoga, offer1, offer2, offer3, offer4, offer1_0, offer1_1, offer1_2, offer2_0, offer2_1, offer2_2, offer3_0, offer3_1, offer3_2, offer4_0, offer4_1, offer4_2 } from "../images/";
+import { disFood, disMassage, disYoga, offer1, offer2, offer3, offer4, offer1_0, offer1_1, offer1_2, offer2_0, offer2_1, offer2_2, offer3_0, offer3_1, offer3_2, offer4_0, offer4_1, offer4_2,
+  beach0, beach1, beach2, beach3, beach4, deluxe0,  deluxe1,  deluxe2,  deluxe3,  deluxe4, family0, family1, family2, family3, family4, sup0, sup1, sup2, sup3, sup4,
+} from "../images/";
 
 export const discoverData = [
   {
@@ -131,5 +133,41 @@ export const offers = [
       'Daily replenishment of your in-villa minibar',
       'Daily laundry service'
     ]
+  },
+];
+
+export const rooms = [
+  {
+    _id: '1',
+    img: [beach0, beach1, beach2, beach3, beach4],
+    title: 'Superior Room',
+    room: {
+      person: 3,
+      bedroom: 1,
+      bathroom: 1
+    },
+    price: {
+      min: 1590,
+      max: 1890
+    },
+    detail: `35-sqm room with a king-sized Bed working desk, shower, free Wi-Fi.
+
+    Sink into style in our Premium Deluxe room. Sleek lines, earthy colours and contemporary décor combine to lend this 35-sqm living space warmth and elegance. Located on the higher floors, this room is basked in natural light and adorned with stunning views of the cityscape or lush gardens.`,
+    amenities: {
+      safe: true,
+      tv: true,
+      wifi: true,
+      aircon: true,
+      fridge: true
+    }
+  },
+  {
+    
+  },
+  {
+    
+  },
+  {
+    
   },
 ];
