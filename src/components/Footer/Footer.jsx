@@ -3,7 +3,6 @@ import React from 'react'
 import { logo } from '../../images';
 import styles from './styles';
 import { Link } from 'react-router-dom';
-import { homeUrl,offerUrl,discoverUrl,contactUsUrl,bookingUrl } from '../../constants/pathUrl';
 import { footerLinks,socialMedia } from "./index";
 
 import  IconButton  from '@mui/material/IconButton';
