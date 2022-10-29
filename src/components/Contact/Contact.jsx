@@ -8,6 +8,7 @@ const ContactUs = ({ setNavbarBg }) => {
 
   useEffect(() => {
       setNavbarBg('')
+      window.scrollTo(0, 0)
   }, []);
 
   const handleSubmit = () => {
