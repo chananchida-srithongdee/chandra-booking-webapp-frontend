@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
     "@mui/system": "^5.10.10",
     "@reduxjs/toolkit": "^1.8.6",
@@ -20,8 +21,10 @@
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "react-slideshow-image": "^4.0.5",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
+    "tw-elements": "^1.0.0-alpha12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer.jsx';
 import Discover from './components/Discover/Discover.jsx';
 import Offers from './components/Offers/Offers.jsx';
 import OfferDetails from './components/OfferDetails/OfferDetails.jsx';
@@ -40,6 +41,7 @@ import { homeUrl, discoverUrl, offerUrl, bookingUrl, booking1Url, booking2Url, b
                     element={<Navigate to={homeUrl} replace />}
                 />
             </Routes>
+            <Footer />
         </div>
     </BrowserRouter>
     

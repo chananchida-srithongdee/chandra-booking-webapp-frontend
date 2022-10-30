@@ -26,4 +26,3 @@ const Discover = ({ setNavbarBg }) => {
 };
 
 export default Discover;
-
