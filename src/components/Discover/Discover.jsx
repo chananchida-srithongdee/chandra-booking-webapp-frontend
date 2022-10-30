@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 
-import Header from '../Header/Header.jsx';
+import Slideshow from '../Slideshow/Slideshow.jsx';
 import Details from "./Details/Details.jsx";
 import { discoverData } from "../../constants/text.js";
-import { bgDiscover } from "../../images/index.js";
 
 const Discover = ({ setNavbarBg }) => {
 
@@ -14,8 +13,8 @@ const Discover = ({ setNavbarBg }) => {
 
   return (
     <div className="w-full">
-      <Header imgSrc={bgDiscover} imgAlt="chandra resort" />
-      <div className="flex flex-col justify-center items-center my-20 sm:px-40 px-12">
+      <Slideshow />
+      <div className="flex flex-col justify-center items-center my-28 sm:px-40 px-12">
         {discoverData.map((item, index) => (
             <div key={index}>
               <Details imgSrc={item.image} imgAlt="chandra service" headText={item.head} subHeadText={item.subHead} detail={item.detail} />

@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './styles';
+import Slideshow from '../Slideshow/Slideshow';
 
 
 const Booking = () => {
     return (
     <div className="w-full">
-        <div className="bg-primary h-[800px] relative">
-            <img src={require("./bg-booking.jpg")} alt="bg-booking" className="w-full h-[800px] object-cover" />
-            <div className="h-[600px]"></div>
-        </div>
+        <Slideshow displayText={false} />
         <div className='grid grid-cols-3 gap-15'>
             {/* Room Types */}
             <div className='col-start-1 col-span-2'> 

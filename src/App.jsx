@@ -13,8 +13,7 @@ import Deluxe from './components/Booking/Deluxe/Deluxe.jsx';
 import BeachHouse from './components/Booking/BeachHouse/BeachHouse.jsx';
 import FamilyPremium from './components/Booking/FamilyPremium/FamilyPremium.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
-import { homeUrl, discoverUrl, offerUrl,bookingUrl, booking1Url, booking2Url, 
-  booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
+import { homeUrl, discoverUrl, offerUrl, bookingUrl, booking1Url, booking2Url, booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
   
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');

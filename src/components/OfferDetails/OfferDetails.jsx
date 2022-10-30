@@ -21,7 +21,7 @@ const OfferDetails = ({ setNavbarBg }) => {
     useEffect(() => {
         setNavbarBg('bg-primary')
         window.scrollTo(0, 0)
-    }, [])
+    }, [id])
 
     return (
         <div className="w-full ss:pt-48 pt-40 caret-transparent flex flex-col justify-center items-center">

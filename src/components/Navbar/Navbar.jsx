@@ -3,7 +3,8 @@ import React, { useState, useEffect} from 'react'
 import { logo, close, menu } from '../../images';
 import styles from './styles';
 import { Link } from 'react-router-dom';
-import { homeUrl,offerUrl,discoverUrl,contactUsUrl,bookingUrl } from '../../constants/pathUrl'
+import { offerUrl, discoverUrl, contactUsUrl, homeUrl, bookingUrl } from '../../constants/pathUrl'
+
 
 const Navbar = ({ navbarBg }) => {
 
@@ -35,7 +36,6 @@ const Navbar = ({ navbarBg }) => {
                     <Link to={offerUrl}><div className={styles.menuText}>Offers</div></Link>
                     <Link to={contactUsUrl}><div className={`${styles.menuText} mr-0`}>Contact Us</div></Link>
                 </div>
-                
                 <Link to={bookingUrl}><div className={styles.checkRates}>Check Rates</div></Link>
 
                 <div className="lg:hidden flex justify-end items-center">
