@@ -26,7 +26,6 @@ const Slideshow = ({ displayText=true, headText=headerDefault.head, detailText=h
         ),
       delay
     );
-    console.log(index);
     return () => {
       resetTimeout();
     };
