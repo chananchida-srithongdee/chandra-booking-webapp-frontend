@@ -144,7 +144,7 @@ export const rooms = [
     room: {
       person: 3,
       bedroom: 1,
-      bathroom: 1
+      bathroom: 1,
     },
     price: {
       min: 1590,
@@ -162,12 +162,78 @@ export const rooms = [
     }
   },
   {
-    
+    _id: '2',
+    img: [deluxe0, deluxe1, deluxe2, deluxe3, deluxe4],
+    title: 'Deluxe Room',
+    room: {
+      person: 3,
+      bedroom: 1,
+      bathroom: 1
+    },
+    price: {
+      min: 1590,
+      max: 1890
+    },
+    detail: `35-sqm room with garden, twin beds, working desk, shower, free Wi-Fi. Suitable for up to 3 guests
+
+    A cocoon of contemporary comfort, our Deluxe rooms either feature  lush green views of  coconut grove. Light and bright, the 35-sqm living space includes a plush twin bed, a work desk area and a spacious bathroom with a glass-enclosed shower. Connect with work, catch a movie or simply sink into relaxation.`,    amenities: {
+      safe: true,
+      tv: true,
+      wifi: true,
+      aircon: true,
+      fridge: true
+    }
   },
   {
-    
+    _id: '3',
+    img: [beach0, beach1, beach2, beach3, beach4],
+    title: 'Beach House',
+    room: {
+      person: 2,
+      bedroom: 1,
+      bathroom: 1,
+      pool: '4.5 x 2.5 meter'
+      
+    },
+    price: {
+      min: 3990,
+      max: 4590
+    },
+    detail: `Chandra Villa, 2 bedroom villa, 4.5 x 2.5 meter hydro pool and seaview
+
+    TheChandraVilla is set on a sheltered corner of beautiful Railay Beach, overlooking the clear blue waters of the Andaman Sea. The Villa features two adjoining bedrooms with king size beds and an ensuite bathroom, as well as a living and dining room, kitchenette and an outdoor deck with hydro pool. Dedicated butler service provided. Size of the villa is 260 sq.m. included outdoor space.`,
+    amenities: {
+      safe: true,
+      tv: true,
+      wifi: true,
+      aircon: true,
+      fridge: true
+    }
   },
   {
-    
+    _id: '4',
+    img: [family0, family1, family2, family3, family4],
+    title: 'Family Premium',
+    room: {
+      person: 2,
+      bedroom: 1,
+      bathroom: 1,
+      pool: '3 x 12 meter'
+      
+    },
+    price: {
+      min: 11990,
+      max: 16890
+    },
+    detail: `Family Villa, 2 bedroom villa, 3 x 12 meter pool
+
+    Family Villa is situated in lush garden and cliff surroundings in the resort, The villa offers spacious accommodation with two adjoining bedrooms as well as a living room and space for outdoor lounging around the villa’s own private 3 x 12 meter swimming pool. Dedicated butler service provided.`,
+    amenities: {
+      safe: true,
+      tv: true,
+      wifi: true,
+      aircon: true,
+      fridge: true
+    }
   },
 ];
