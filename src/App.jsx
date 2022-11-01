@@ -9,7 +9,8 @@ import Offers from './components/Offers/Offers.jsx';
 import OfferDetails from './components/OfferDetails/OfferDetails.jsx';
 import Booking from './components/Booking/Booking.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
-import { homeUrl, discoverUrl, offerUrl, bookingUrl, booking1Url, booking2Url, booking3Url, booking4Url, contactUsUrl } from './constants/pathUrl.js';
+import RoomDetails from './components/RoomDetails/RoomDetails.jsx';
+import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl } from './constants/pathUrl.js';
   
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');
@@ -27,6 +28,8 @@ import { homeUrl, discoverUrl, offerUrl, bookingUrl, booking1Url, booking2Url, b
                 <Route path={offerUrl + '/details/:id'} exact element={<OfferDetails setNavbarBg={setNavbarBg} />} />
 
                 <Route path={bookingUrl} exact element={<Booking setNavbarBg={setNavbarBg} />} />
+
+                <Route path={roomDetailUrl + '/:id'} exact element={<RoomDetails setNavbarBg={setNavbarBg} />} />
 
                 <Route
                     path="*"

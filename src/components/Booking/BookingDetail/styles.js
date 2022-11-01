@@ -1,9 +1,9 @@
 const styles = {
     headText: "font-bold text-xl text-white",
-    subText: "text-md text-white",
-    subsubText: "text-sm text-white/60",
+    subText: "xs:text-md text-sm text-white",
+    subsubText: "xs:text-sm text-xs text-white/60",
     roomText: "text-lg text-white font-bold",
-    subroomText: "text-sm text-white",
+    subroomText: "xs:text-sm text-xs text-white",
 }
 
 export default styles;

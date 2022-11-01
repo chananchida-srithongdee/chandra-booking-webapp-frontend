@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styles from './styles';
 
 import { rooms } from '../../constants/text';
 import Slideshow from '../Slideshow/Slideshow.jsx';
@@ -8,64 +7,65 @@ import Roomdetail from './Roomdetail/Roomdetail';
 import GuestSelect from './GuestSelect/GuestSelect';
 import DateSelect from './DateSelect/DateSelect';
 
-const initialState = { guest: { adult: 0, child: 0 }, checkInDate: new Date(), checkOutDate: new Date(), roomsCount: [] }
 
 const Booking = ({ setNavbarBg }) => {
-
+    const roomsList = rooms.map((room) => ({ id: room._id, title: room.title, bf: 0, nobf: 0, min: room.price.min, max: room.price.max, person: room.maxPerson }))
+    const initialState = { guest: { adult: 0, child: 0 }, checkInDate: '', checkOutDate: '', roomsCount: roomsList }
     const [bookingData, setBookingData] = useState(initialState);
+    
+    const checkIn = new Date(bookingData.checkInDate);
+    const checkOut = new Date(bookingData.checkOutDate);
+    const totalNights = Math.ceil(Math.abs(checkOut.getTime() - checkIn.getTime()) / (1000 * 3600 * 24)) || 0;
 
-    const getRoomDetail = () => {
-        let temp = [];
-        for (let i = 0; i < rooms.length; i++) {
-            temp.push({id: rooms[i]._id, title: rooms[i].title, bf: 0, nobf: 0, min: rooms[i].price.min, max: rooms[i].price.max, person: rooms[i].room.person });
-        };
+    const calTotalPayment = () => {
+        var temp = 0;
+        bookingData.roomsCount.forEach((room) => {
+            temp += ((room.bf*room.max) + (room.nobf*room.min))
+        })
+        return temp *= totalNights;
+    }
+
+    const calMaxGuest = () => {
+        var temp = 0;
+        bookingData.roomsCount.forEach((room) => {
+            temp += (room.person)*(room.bf + room.nobf)
+        })
         return temp;
-    };
-    var roomDetail = getRoomDetail();
-    var maxGuest = 0
+    }
+    const maxGuest = calMaxGuest();
+    const totalPayment = calTotalPayment();
+
+    useEffect(() => {
+        if(bookingData.guest.adult + bookingData.guest.child > maxGuest){
+            setBookingData({ ...bookingData, guest : { adult: 0, child: 0 }})
+        }
+    },[bookingData.roomsCount]);
 
     useEffect(() => {
         setNavbarBg('');
         // window.scrollTo(0, 0);
     },[]);
-
-    useEffect(() => {
-        if(bookingData.roomsCount){
-            for (let i = 0; i < bookingData.roomsCount.length; i++) {
-                for (let j = 0; j < roomDetail.length; j++) {
-                    if(bookingData.roomsCount[i].id === roomDetail[j].id && bookingData.roomsCount[i].bf === true){
-                        roomDetail[j].bf += 1;
-                        maxGuest += roomDetail[j].person;
-                    } else if(bookingData.roomsCount[i].id === roomDetail[j].id && bookingData.roomsCount[i].bf === false){
-                        roomDetail[j].nobf += 1;
-                        maxGuest += roomDetail[j].person;
-                    }
-                };
-            }
-        }
-    },[bookingData]);
-
     
     return (
         <div className="w-full caret-transparent">
             <Slideshow displayText={false} />
-            <div className="flex flex-col lg:flex-row justify-center w-full py-32 px-32">
+            <div className="flex flex-col-reverse lg:flex-row lg:flex-row justify-center w-full py-32 xl:px-32 md:px-20 px-10">
                 <div className="lg:w-2/3 w-full">
-                    <div className="flex border-[1px] border-black/20 rounded-lg lg:mr-28">
+                    <div className="flex ss:flex-row flex-col border-[1px] border-black/20 rounded-lg xl:mr-28 lg:mr-7">
                         <GuestSelect bookingData={bookingData} setBookingData={setBookingData} adult={bookingData.guest.adult} child={bookingData.guest.child} maxGuest={maxGuest} />
                         <DateSelect bookingData={bookingData} setBookingData={setBookingData} />
                     </div>
-                    <div>
+                    <div className="xl:mr-28 lg:mr-7">
                         <div className="font-bold text-secondary text-3xl my-6">Select Room</div>
                         {rooms.map((room) => (
                             <div key={room._id}>
-                                <Roomdetail room={room}/>
+                                <Roomdetail bookingData={bookingData} setBookingData={setBookingData} room={room} />
                             </div>
                         ))}   
                     </div>
                 </div>
-                <div className="lg:justify-start justify-center flex">
-                    <BookingDetail bookingData={bookingData} rooms={roomDetail} />
+                <div className="lg:justify-start justify-center flex mb-10">
+                    <BookingDetail bookingData={bookingData} totalPayment={totalPayment} totalNights={totalNights} />
                 </div>
             </div>
         </div>

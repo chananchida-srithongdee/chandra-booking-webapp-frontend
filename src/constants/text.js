@@ -142,11 +142,15 @@ export const rooms = [
     available: 10,
     img: [sup0, sup1, sup2, sup3, sup4],
     title: 'Superior Room',
-    room: {
-      person: 3,
-      bedroom: 1,
-      bathroom: 1,
-    },
+    maxPerson: 3,
+    room: [
+      {type: 'Bedroom', quantity: 1},
+      {type: 'Bathroom', quantity: 1},
+    ],
+    beds : [
+      {type: 'Twin', quantity: 0},
+      {type: 'King', quantity: 1},
+    ],
     price: {
       min: 1590,
       max: 1890
@@ -154,50 +158,47 @@ export const rooms = [
     detail: `35-sqm room with a king-sized Bed working desk, shower, free Wi-Fi.
 
     Sink into style in our Premium Deluxe room. Sleek lines, earthy colours and contemporary décor combine to lend this 35-sqm living space warmth and elegance. Located on the higher floors, this room is basked in natural light and adorned with stunning views of the cityscape or lush gardens.`,
-    amenities: {
-      safe: true,
-      tv: true,
-      wifi: true,
-      aircon: true,
-      fridge: true
-    }
+    amenities: ['Safe in Room', 'Free Wifi', 'Refrigerator', 'Air Conditioning', 'Television'],
+    rules: ['Non-smoking']
   },
   {
     _id: '2',
     available: 10,
     img: [deluxe0, deluxe1, deluxe2, deluxe3, deluxe4],
     title: 'Deluxe Room',
-    room: {
-      person: 3,
-      bedroom: 1,
-      bathroom: 1
-    },
+    maxPerson: 3,
+    room: [
+      {type: 'Bedroom', quantity: 1},
+      {type: 'Bathroom', quantity: 1},
+    ],
+    beds : [
+      {type: 'Twin', quantity: 2},
+      {type: 'King', quantity: 0},
+    ],
     price: {
       min: 1590,
       max: 1890
     },
     detail: `35-sqm room with garden, twin beds, working desk, shower, free Wi-Fi. Suitable for up to 3 guests
 
-    A cocoon of contemporary comfort, our Deluxe rooms either feature  lush green views of  coconut grove. Light and bright, the 35-sqm living space includes a plush twin bed, a work desk area and a spacious bathroom with a glass-enclosed shower. Connect with work, catch a movie or simply sink into relaxation.`,    amenities: {
-      safe: true,
-      tv: true,
-      wifi: true,
-      aircon: true,
-      fridge: true
-    }
+    A cocoon of contemporary comfort, our Deluxe rooms either feature  lush green views of  coconut grove. Light and bright, the 35-sqm living space includes a plush twin bed, a work desk area and a spacious bathroom with a glass-enclosed shower. Connect with work, catch a movie or simply sink into relaxation.`,     
+    amenities: ['Safe in Room', 'Free Wifi', 'Refrigerator', 'Air Conditioning', 'Television'],
+    rules: ['Non-smoking']
   },
   {
     _id: '3',
-    available: 0,
+    available: 5,
     img: [beach0, beach1, beach2, beach3, beach4],
     title: 'Beach House',
-    room: {
-      person: 2,
-      bedroom: 1,
-      bathroom: 1,
-      pool: '4.5 x 2.5 meter'
-      
-    },
+    maxPerson: 2,
+    room: [
+      {type: 'Bedroom', quantity: 1},
+      {type: 'Bathroom', quantity: 1},
+    ],
+    beds : [
+      {type: 'Twin', quantity: 0},
+      {type: 'King', quantity: 1},
+    ],
     price: {
       min: 3990,
       max: 4590
@@ -205,26 +206,23 @@ export const rooms = [
     detail: `Chandra Villa, 2 bedroom villa, 4.5 x 2.5 meter hydro pool and seaview
 
     TheChandraVilla is set on a sheltered corner of beautiful Railay Beach, overlooking the clear blue waters of the Andaman Sea. The Villa features two adjoining bedrooms with king size beds and an ensuite bathroom, as well as a living and dining room, kitchenette and an outdoor deck with hydro pool. Dedicated butler service provided. Size of the villa is 260 sq.m. included outdoor space.`,
-    amenities: {
-      safe: true,
-      tv: true,
-      wifi: true,
-      aircon: true,
-      fridge: true
-    }
+    amenities: ['Safe in Room', 'Free Wifi', 'Refrigerator', 'Air Conditioning', 'Television', 'Swimming Pool'],
+    rules: ['Non-smoking']
   },
   {
     _id: '4',
     available: 10,
     img: [family0, family1, family2, family3, family4],
     title: 'Family Premium',
-    room: {
-      person: 2,
-      bedroom: 1,
-      bathroom: 1,
-      pool: '3 x 12 meter'
-      
-    },
+    maxPerson: 5,
+    room: [
+      {type: 'Bedroom', quantity: 1},
+      {type: 'Bathroom', quantity: 1},
+    ],
+    beds : [
+      {type: 'Twin', quantity: 2},
+      {type: 'King', quantity: 1},
+    ],
     price: {
       min: 11990,
       max: 16890
@@ -232,12 +230,7 @@ export const rooms = [
     detail: `Family Villa, 2 bedroom villa, 3 x 12 meter pool
 
     Family Villa is situated in lush garden and cliff surroundings in the resort, The villa offers spacious accommodation with two adjoining bedrooms as well as a living room and space for outdoor lounging around the villa’s own private 3 x 12 meter swimming pool. Dedicated butler service provided.`,
-    amenities: {
-      safe: true,
-      tv: true,
-      wifi: true,
-      aircon: true,
-      fridge: true
-    }
+    amenities: ['Safe in Room', 'Free Wifi', 'Refrigerator', 'Air Conditioning', 'Television', 'Swimming Pool'],
+    rules: ['Non-smoking']
   },
 ];
