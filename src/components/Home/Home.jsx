@@ -20,9 +20,9 @@ const Home = ({ setNavbarBg }) => {
   return (
     <div className="w-full pb-40">
       <Slideshow />
-      <div className='w-full mt-32'>
-        <div className='text-center text-primary text-5xl mb-5'>THE CHANDRA</div>
-        <div className='text-center text-primary text-8xl'>Experience the difference</div>
+      <div className='w-full mt-28'>
+        <div className='text-center text-primary md:text-5xl sm:text-3xl text-2xl mb-5'>THE CHANDRA</div>
+        <div className='text-center text-primary md:text-8xl sm:text-6xl text-5xl'>Experience the difference</div>
         <Section title='New Journeys Begin Now' items={offers} imgW="270px" imgH="340px" url={offerUrl} />
       </div>
       

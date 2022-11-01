@@ -9,11 +9,18 @@ export const THEME = createTheme({
     palette: {
         primary: {
           main: '#484848',
-          fade: "#6b6b6b",
+        },
+        primaryfade: {
+          main: "#6b6b6b",
         },
         secondary: {
           main: '#D4990D',
-          fade: '#e3b549',
+        },
+        secondaryfade: {
+          main: '#e3b549',
+        },
+        white: {
+          main: '#ffffff',
         },
       },
  });
