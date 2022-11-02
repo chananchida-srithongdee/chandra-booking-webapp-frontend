@@ -34,7 +34,7 @@ const Footer = () => (
             <div className="flex flex-row justify-end md:mt-0 mt-6 mr-20 ">
                 {socialMedia.map((socialMedia, index) => (
                     <div key={index}>
-                        <IconButton sx={{ color: 'white' }} className='hover:text-secondary' onClick={() => window.open(socialMedia.link)}>
+                        <IconButton color='white' className='hover:text-secondary' onClick={() => window.open(socialMedia.link)}>
                             {socialMedia.icon}
                         </IconButton>   
                     </div>

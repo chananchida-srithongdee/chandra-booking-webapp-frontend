@@ -1,6 +1,3 @@
-import close from "./close.svg";
-import menu from "./menu.svg";
-
 import logo from "./home/logo.svg";
 
 import bg1 from "./slideshow/bg1.svg"
@@ -54,9 +51,6 @@ import sup4 from "./booking/superior/4.jpg";
 
 
 export {
-  close,
-  menu,
-
   logo,
 
   disFood,
