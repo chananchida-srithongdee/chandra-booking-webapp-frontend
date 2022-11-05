@@ -4,7 +4,10 @@ export const THEME = createTheme({
     typography: {
      "fontFamily": `'Tinos', serif`,
      "fontWeightRegular": 400,
-     "fontWeightBold": 700
+     "fontWeightBold": 700,
+     button: {
+      textTransform: 'none'
+    }
     },
     palette: {
         primary: {

@@ -14,7 +14,6 @@ const DateSelect = ({ bookingData, setBookingData }) => {
 
     const [date, setDate] = useState([{ startDate: today, endDate: tomorrow, key: 'selection' }]);
     const [showSelectDate, setShowSelectDate] = useState(false);
-    const [validDate, setValidDate] = useState(true);
 
     const handleDateShow = () => {
         if(showSelectDate){
