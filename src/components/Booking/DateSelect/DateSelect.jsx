@@ -37,11 +37,11 @@ const DateSelect = ({ bookingData, setBookingData }) => {
         <div className="relative flex-initial ss:w-2/3 w-full">
             <div className={`${styles.selectBtn} ss:border-l-[1px] ss:border-t-0 border-t-[1px] border-black/20 flex w-full`} onClick={handleDateShow}>
                 <div className="flex-1">
-                    <div className={`${styles.headText}`}>Check In</div>
+                    <div className={`${styles.headText}`}>Check-In</div>
                     <div className={styles.subText}>{bookingData.checkInDate}</div>
                 </div>
                 <div className="flex-1">
-                    <div className={`${styles.headText}`}>Check Out</div>
+                    <div className={`${styles.headText}`}>Check-Out</div>
                     <div className={styles.subText}>{bookingData.checkOutDate ? bookingData.checkOutDate : 'Please select check out date'}</div>
                 </div>
                 <div className="items-center flex">

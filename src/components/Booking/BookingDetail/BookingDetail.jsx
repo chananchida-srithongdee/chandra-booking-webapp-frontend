@@ -4,10 +4,27 @@ import styles from './styles.js';
 import BookRoom from './BookRoom.jsx';
 import { Button } from '@mui/material';
 
-const BookingDetail = ({ bookingData, totalPayment, totalNights }) => {
+const BookingDetail = ({ bookingData, totalPayment, totalNights, isPayment, setIsPayment }) => {
   const { guest, checkInDate, checkOutDate, roomsCount } = bookingData;
-  const [showPayButton, setShowPayButton] = useState(false);
+  const [disablePayButton, setDisablePayButton] = useState(true);
   
+  const handlePayment = () => {
+    var checkRoom = false;
+    for(let room of roomsCount){
+      if(room.bf > 0 || room.nobf > 0){
+        checkRoom = true;
+        break
+      }
+    }
+    if(guest.adult > 0 && checkInDate && checkOutDate && roomsCount && checkRoom){
+      setIsPayment(true)
+    }
+  }
+
+  const handleGoBack = () => {
+    setIsPayment(false)
+  }
+
   useEffect(() => {
     var checkRoom = false;
     for(let room of roomsCount){
@@ -17,9 +34,9 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights }) => {
       }
     }
     if(guest.adult > 0 && checkInDate && checkOutDate && roomsCount && checkRoom){
-      setShowPayButton(true)
+      setDisablePayButton(false)
     }else{
-      setShowPayButton(false)
+      setDisablePayButton(true)
     }
   }, [bookingData])
   
@@ -28,12 +45,12 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights }) => {
         <div className="font-bold text-secondary text-2xl text-shadow-xl mb-3">Your Stay</div>
         <div className="flex justify-between mb-3">
           <div>
-            <div className={styles.headText}>Check In</div>
+            <div className={styles.headText}>Check-In</div>
             <div className={styles.subText}>{checkInDate}</div>
             <div className={styles.subsubText}>After 2:00 PM</div>
           </div>
           <div>
-            <div className={styles.headText}>Check Out</div>
+            <div className={styles.headText}>Check-Out</div>
             <div className={styles.subText}>{checkOutDate ? checkOutDate : 'No check out date'}</div>
             <div className={styles.subsubText}>Before 12:00 PM</div>
           </div>
@@ -58,10 +75,15 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights }) => {
         <ul className='mt-2 ml-5 text-sm text-white list-disc'>
             <li className='text-red-500 text-shadow-md'>*Need at least one adult</li>
             <li>Under 6 years stay for free</li>
+            <li>You will receive breakfast coupon(s) based on maximum guests per room (with breakfast)</li>
+            <li>You can buy additional breakfast coupons at hotel</li>
             <li>You can ask for an extra bed at hotel</li>
         </ul>
-        {/* <Button variant='contained' color='secondary' style={{ fontColor: 'white'}}>Continue to payment</Button> */}
-        {/* <div className='text-white text-lg font-bold bg-secondary shadow-lg w-[200px] rounded-full text-center py-1 self-end mt-5 hover:bg-transparent hover:text-secondary border-2 border-secondary transition-all cursor-pointer'>Continue to payment</div> */}
+        {isPayment ? (
+          <Button variant='outlined' color='white' style={styles.button} onClick={handleGoBack}>◀ Edit your stay</Button>
+        ) : (
+          <Button variant='contained' color='secondary' style={styles.button} disabled={disablePayButton} onClick={handlePayment}>Continue to payment</Button>
+        )}
     </div>
   )
 }

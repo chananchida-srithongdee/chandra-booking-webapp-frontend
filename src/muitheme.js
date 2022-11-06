@@ -6,7 +6,7 @@ export const THEME = createTheme({
      "fontWeightRegular": 400,
      "fontWeightBold": 700,
      button: {
-      textTransform: 'none'
+      textTransform: 'none',
     }
     },
     palette: {
