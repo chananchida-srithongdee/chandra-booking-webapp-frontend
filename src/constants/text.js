@@ -234,3 +234,32 @@ export const rooms = [
     rules: ['Non-smoking']
   },
 ];
+
+export const prefix = [
+  {
+    value: 'Mr.',
+    label: 'Mr.',
+  },
+  {
+    value: 'Mrs.',
+    label: 'Mrs.',
+  },
+  {
+    value: 'Ms.',
+    label: 'Ms.',
+  },
+  {
+    value: 'Miss',
+    label: 'Miss',
+  },
+];
+
+export const policies = [
+  'Need at least one adult',
+  'Check-in after 2:00 PM and Check-out before 12:00 PM',
+  'Cancellation less than 15 days will be charged 75% of total payment',
+  'Under 6 years stay for free',
+  'You will receive breakfast coupon(s) based on maximum guests per room (with breakfast)',
+  'You can buy additional breakfast coupons at hotel',
+  'You can ask for an extra bed at hotel',
+]

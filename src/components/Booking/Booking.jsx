@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { rooms } from '../../constants/text';
 import Slideshow from '../Slideshow/Slideshow.jsx';
 import BookingDetail from './BookingDetail/BookingDetail.jsx';
-import Roomdetail from './Roomdetail/Roomdetail';
-import GuestSelect from './GuestSelect/GuestSelect';
-import DateSelect from './DateSelect/DateSelect';
+import Roomdetail from './Roomdetail/Roomdetail.jsx';
+import GuestSelect from './GuestSelect/GuestSelect.jsx';
+import DateSelect from './DateSelect/DateSelect.jsx';
+import Payment from './Payment/Payment.jsx';
 
 
 const Booking = ({ setNavbarBg }) => {
     const roomsList = rooms.map((room) => ({ id: room._id, title: room.title, bf: 0, nobf: 0, min: room.price.min, max: room.price.max, person: room.maxPerson }))
     const initialState = { guest: { adult: 0, child: 0 }, checkInDate: '', checkOutDate: '', roomsCount: roomsList }
     const [bookingData, setBookingData] = useState(initialState);
+    const [isPayment, setIsPayment] = useState(false);
     
     const checkIn = new Date(bookingData.checkInDate);
     const checkOut = new Date(bookingData.checkOutDate);
@@ -47,15 +49,16 @@ const Booking = ({ setNavbarBg }) => {
     },[]);
     
     return (
-        <div className="w-full caret-transparent">
+        <div className="w-full">
             <Slideshow displayText={false} />
             <div className="flex flex-col-reverse lg:flex-row lg:flex-row justify-center w-full py-32 xl:px-32 md:px-20 px-10">
-                <div className="lg:w-2/3 w-full">
-                    <div className="flex ss:flex-row flex-col border-[1px] border-black/20 rounded-lg xl:mr-28 lg:mr-7">
+                {isPayment ? <Payment bookingData={bookingData} /> : (
+                <div className="lg:w-2/3 w-full xl:mr-28 lg:mr-7 caret-transparent">
+                    <div className="flex ss:flex-row flex-col border-[1px] border-black/20 rounded-lg ">
                         <GuestSelect bookingData={bookingData} setBookingData={setBookingData} adult={bookingData.guest.adult} child={bookingData.guest.child} maxGuest={maxGuest} />
                         <DateSelect bookingData={bookingData} setBookingData={setBookingData} />
                     </div>
-                    <div className="xl:mr-28 lg:mr-7">
+                    <div>
                         <div className="font-bold text-secondary text-3xl my-6">Select Room</div>
                         {rooms.map((room) => (
                             <div key={room._id}>
@@ -64,8 +67,9 @@ const Booking = ({ setNavbarBg }) => {
                         ))}   
                     </div>
                 </div>
-                <div className="lg:justify-start justify-center flex mb-10">
-                    <BookingDetail bookingData={bookingData} totalPayment={totalPayment} totalNights={totalNights} />
+                )}
+                <div className="lg:justify-start justify-center flex mb-10 caret-transparent">
+                    <BookingDetail bookingData={bookingData} totalPayment={totalPayment} totalNights={totalNights} isPayment={isPayment} setIsPayment={setIsPayment} />
                 </div>
             </div>
         </div>
