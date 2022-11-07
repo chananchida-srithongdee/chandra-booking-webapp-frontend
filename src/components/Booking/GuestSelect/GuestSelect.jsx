@@ -19,7 +19,7 @@ const GuestSelect = ({  bookingData, setBookingData, adult, child, maxGuest }) =
     }
     
   return (
-    <div className="relative flex-initial ss:w-1/3 w-full">
+    <div className="relative flex-initial ss:w-1/3 w-full ss:border-l-[1px] ss:border-t-0 border-t-[1px] border-black/20">
         <div className={`${styles.selectBtn} flex justify-between`} onClick={handleGuestShow} >
             <div>
                 <div className={`${styles.headText}`}>Guest</div>

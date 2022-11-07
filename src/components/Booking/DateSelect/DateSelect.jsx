@@ -4,16 +4,15 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 import styles from './styles';
+import { addYears } from 'date-fns';
+import { addDays } from 'date-fns/esm';
 
 const DateSelect = ({ bookingData, setBookingData }) => {
-    const today = new Date();
-    const tomorrow = new Date();
-    const maxDate = new Date();
-    tomorrow.setDate(today.getDate() + 1);
-    maxDate.setDate(today.getDate() + (365*5));
+    const maxDate = addYears(new Date(), 1);
 
-    const [date, setDate] = useState([{ startDate: today, endDate: tomorrow, key: 'selection' }]);
+    const [date, setDate] = useState([{ startDate: new Date(), endDate: addDays(new Date(), 1), key: 'selection' }]);
     const [showSelectDate, setShowSelectDate] = useState(false);
+    const [disabledDate, setDisabledDate] = useState([]);
 
     const handleDateShow = () => {
         if(showSelectDate){
@@ -24,6 +23,12 @@ const DateSelect = ({ bookingData, setBookingData }) => {
     }
 
     useEffect(() => {
+        // getRoomFullDate
+        // setDisabledDate([addDays(new Date(), 2), addDays(new Date(), 3), addDays(new Date(), 10), addDays(new Date(), 11)])
+
+    }, [])
+
+    useEffect(() => {
         const checkIn = new Date(date[0].startDate)
         const checkOut = new Date(date[0].endDate)
         if(date[0].startDate.toDateString() === date[0].endDate.toDateString()){
@@ -31,11 +36,12 @@ const DateSelect = ({ bookingData, setBookingData }) => {
         }else{
             setBookingData({ ...bookingData, checkInDate: checkIn.toDateString(), checkOutDate: checkOut.toDateString() })
         }
+
     },[date])
 
     return (
         <div className="relative flex-initial ss:w-2/3 w-full">
-            <div className={`${styles.selectBtn} ss:border-l-[1px] ss:border-t-0 border-t-[1px] border-black/20 flex w-full`} onClick={handleDateShow}>
+            <div className={`${styles.selectBtn} flex w-full`} onClick={handleDateShow}>
                 <div className="flex-1">
                     <div className={`${styles.headText}`}>Check-In</div>
                     <div className={styles.subText}>{bookingData.checkInDate}</div>
@@ -49,13 +55,14 @@ const DateSelect = ({ bookingData, setBookingData }) => {
                 </div>
             </div>
             {showSelectDate && (
-            <div className="absolute">
+            <div className="absolute shadow-xl">
                 <DateRange
                     editableDateInputs={true}
                     onChange={item => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
-                    minDate={today}
+                    minDate={new Date()}
+                    disabledDates={disabledDate}
                     maxDate={maxDate}
                     rangeColors = {['#D4990D','#D4990D','#D4990D']}
                     className='xs:text-[14px] text-[11px]'

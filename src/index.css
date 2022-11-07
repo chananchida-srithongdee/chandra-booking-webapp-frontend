@@ -10,8 +10,27 @@ html {
   font-family: 'Tinos', serif;
 }
 
-.box-shadow {
-  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e2e2e2; 
+  border-radius: 20px;
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(102, 102, 102); 
 }
 
 .sidebar-down {
@@ -26,7 +45,7 @@ html {
 
 .fade {
   -webkit-animation: fade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /*webkit for chrome safari*/
-  animation: fade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: fade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .bgfade {
@@ -100,7 +119,7 @@ html {
 
 @-webkit-keyframes fade {
   0% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -109,7 +128,7 @@ html {
 
 @keyframes fade {
   0% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;

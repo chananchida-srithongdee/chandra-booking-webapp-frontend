@@ -10,6 +10,8 @@ const Roomdetail = ({ room, bookingData, setBookingData }) => {
 
   const [showLimitRoom, setShowLimitRoom] = useState(false);
 
+  //!! use available room from roomstate and display it if less than 4 room available
+
   return (
     <div className="w-full border-[1px] p-5 my-4 rounded-xl border-black/20 flex sm:flex-row flex-col">
       <div className="flex-initial sm:w-2/5 w-full mr-8">
