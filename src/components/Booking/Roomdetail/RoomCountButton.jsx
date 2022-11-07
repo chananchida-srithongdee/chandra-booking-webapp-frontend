@@ -1,8 +1,23 @@
 import styles from './styles';
 
-const GuestCountButton = ({  bookingData, setBookingData, room, isBf, setShowLimitRoom }) => {
+import { availableRooms } from '../../../constants/text';
 
-    const timeout = 2000;
+const timeout = 2000;
+
+const GuestCountButton = ({  bookingData, setBookingData, room, isBf, setShowLimitRoom }) => {
+    
+    // const { availableRooms } = useSelector((state) => state.rooms);
+    const findAvaiRoom = () => {
+        var temp = 0
+        for(let availableRoom of availableRooms){
+            if(availableRoom._id === room._id){
+                temp = availableRoom.available;
+            }
+        }
+        return temp
+    }
+    const available = findAvaiRoom();
+
     const handleShowLimitRoom = () => {
         setShowLimitRoom(true)
         setTimeout(() => (setShowLimitRoom(false)),timeout)
@@ -13,7 +28,7 @@ const GuestCountButton = ({  bookingData, setBookingData, room, isBf, setShowLim
         if(isBf){
             newRoomsCount = bookingData.roomsCount.map((r) => {
                 if(r.id === room._id){
-                    if(r.bf+r.nobf >= room.available){
+                    if(r.bf+r.nobf >= available){
                         handleShowLimitRoom();
                         return {...r, bf: r.bf}
                     }else{
@@ -26,7 +41,7 @@ const GuestCountButton = ({  bookingData, setBookingData, room, isBf, setShowLim
         }else{
             newRoomsCount = bookingData.roomsCount.map((r) => {
                 if(r.id === room._id){
-                    if(r.bf+r.nobf >= room.available){
+                    if(r.bf+r.nobf >= available){
                         handleShowLimitRoom();
                         return {...r, nobf: r.nobf}
                     }else{
@@ -52,7 +67,7 @@ const GuestCountButton = ({  bookingData, setBookingData, room, isBf, setShowLim
     };
 
     return (
-    <div className={`${styles.detailContainer} flex justify-between px-2 py-3 h-full`}>
+    <div className={`${styles.detailContainer} flex justify-between px-2 pt-3 xl:pb-14 h-full`}>
         <div>
             <div className={styles.price}>THB {isBf ? room.price.max.toLocaleString() : room.price.min.toLocaleString()}</div>
             <div className="text-xs text-primary ml-1 mt-1">Per Night<br/>Excluding Taxes & Fees<br/>{isBf ? 'With Breakfast' : 'No Breakfast'}</div>
