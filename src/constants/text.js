@@ -38,8 +38,7 @@ export const headerDefault = {
 export const offers = [
   {
     _id: '1',
-    mainImg: offer1,
-    otherImg: [offer1_0, offer1_1, offer1_2],
+    img: [offer1, offer1_0, offer1_1, offer1_2],
     title: 'The Place to Revitalise',
     subtitle: 'Relax and Unwind at Chandra',
     offerList: [
@@ -65,8 +64,7 @@ export const offers = [
   },
   {
     _id: '2',
-    mainImg: offer2,
-    otherImg: [offer2_0, offer2_1, offer2_2],
+    img: [offer2, offer2_0, offer2_1, offer2_2],
     title: 'Linger for Longer',
     subtitle: 'Escape for longer and re-energise',
     offerList: [
@@ -95,8 +93,7 @@ export const offers = [
   },
   {
     _id: '3',
-    mainImg: offer3,
-    otherImg: [offer3_0, offer3_1, offer3_2],
+    img: [offer3, offer3_0, offer3_1, offer3_2],
     title: 'The Place to Call Your Own',
     subtitle: 'Suites & Private Villa Escape',
     offerList: [
@@ -113,8 +110,7 @@ export const offers = [
                 Enjoy peace of mind when staying with Centara Hotels & Resorts as we continue to follow strict safety protocols and adhere to certified health and hygiene procedures with the comprehensive Chandra Complete Care programme..`,
   },{
     _id: '4',
-    mainImg: offer4,
-    otherImg: [offer4_0, offer4_1, offer4_2],
+    img: [offer4, offer4_0, offer4_1, offer4_2],
     title: 'Chandra Unlimited',
     subtitle: 'Enables guests to experience everything',
     offerList: [
@@ -139,7 +135,6 @@ export const offers = [
 export const rooms = [
   {
     _id: '1',
-    available: 10,
     img: [sup0, sup1, sup2, sup3, sup4],
     title: 'Superior Room',
     maxPerson: 3,
@@ -163,7 +158,6 @@ export const rooms = [
   },
   {
     _id: '2',
-    available: 10,
     img: [deluxe0, deluxe1, deluxe2, deluxe3, deluxe4],
     title: 'Deluxe Room',
     maxPerson: 3,
@@ -187,7 +181,6 @@ export const rooms = [
   },
   {
     _id: '3',
-    available: 5,
     img: [beach0, beach1, beach2, beach3, beach4],
     title: 'Beach House',
     maxPerson: 2,
@@ -211,7 +204,6 @@ export const rooms = [
   },
   {
     _id: '4',
-    available: 10,
     img: [family0, family1, family2, family3, family4],
     title: 'Family Premium',
     maxPerson: 5,
@@ -234,3 +226,51 @@ export const rooms = [
     rules: ['Non-smoking']
   },
 ];
+
+export const availableRooms = [
+  {
+    _id: '1',
+    available: 10
+  },
+  {
+    _id: '2',
+    available: 10
+  },
+  {
+    _id: '3',
+    available: 5
+  },
+  {
+    _id: '4',
+    available: 10
+  },
+];
+
+export const prefix = [
+  {
+    value: 'Mr.',
+    label: 'Mr.',
+  },
+  {
+    value: 'Mrs.',
+    label: 'Mrs.',
+  },
+  {
+    value: 'Ms.',
+    label: 'Ms.',
+  },
+  {
+    value: 'Miss',
+    label: 'Miss',
+  },
+];
+
+export const policies = [
+  'Need at least one adult',
+  'Check-in after 2:00 PM and Check-out before 12:00 PM',
+  'Cancellation less than 15 days will be charged 75% of total payment',
+  'Under 6 years stay for free',
+  'You will receive breakfast coupon(s) based on maximum guests per room (with breakfast)',
+  'You can buy additional breakfast coupons at hotel',
+  'You can ask for an extra bed at hotel',
+]

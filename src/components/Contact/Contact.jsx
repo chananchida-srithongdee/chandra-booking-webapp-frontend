@@ -88,7 +88,7 @@ const ContactUs = ({ setNavbarBg }) => {
             <div className={`${styles.flexCenter} flex-col gap-2`}>
               <span className={`${styles.secondaryText}`}>Message</span>
               <TextField
-                placeholder="Tell us what you whould like to know or let us know if you have any special requests"
+                placeholder="Tell us what you would like to know or let us know if you have any special requests"
                 variant="outlined"
                 rows="5"
                 required

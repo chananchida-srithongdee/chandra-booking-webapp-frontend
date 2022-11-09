@@ -19,11 +19,11 @@ const GuestSelect = ({  bookingData, setBookingData, adult, child, maxGuest }) =
     }
     
   return (
-    <div className="relative flex-initial ss:w-1/3 w-full">
+    <div className="relative flex-initial ss:w-1/3 w-full ss:border-l-[1px] ss:border-t-0 border-t-[1px] border-black/20">
         <div className={`${styles.selectBtn} flex justify-between`} onClick={handleGuestShow} >
             <div>
                 <div className={`${styles.headText}`}>Guest</div>
-                <div className={`${styles.subText}`}>{bookingData.guest.adult} {bookingData.guest.adult > 1 ? 'Adults' : 'Adult'} {bookingData.guest.child} {bookingData.guest.child > 1 ? 'Children' : 'Child'}</div>
+                <div className={`${styles.subText}`}>{bookingData.guest.adult} {bookingData.guest.adult > 1 ? 'Adults' : 'Adult'} {bookingData.guest.child} {bookingData.guest.child > 1 ? 'Children' : 'Child'} (6-12 years) </div>
             </div>
             <div className="items-center flex">
                 {showSelectGuest ? <ArrowDropUpIcon fontSize='large' /> : <ArrowDropDownIcon fontSize='large' />}
@@ -37,11 +37,11 @@ const GuestSelect = ({  bookingData, setBookingData, adult, child, maxGuest }) =
             <GuestCountButton bookingData={bookingData} setBookingData={setBookingData} changeData={adult} compareData={child} maxGuest={maxGuest} name="adult" title="Adults" setShowLimitGuest={setShowLimitGuest} />
             <GuestCountButton bookingData={bookingData} setBookingData={setBookingData} changeData={child} compareData={adult} maxGuest={maxGuest} name="child" title="Children" setShowLimitGuest={setShowLimitGuest} />
             {showLimitGuest && (maxGuest <= 0 ? (
-                <div className="text-red-600 text-sm flex justify-end">
+                <div className={styles.warningText}>
                     Please select room first
                 </div> 
             ):(
-                <div className="text-red-600 text-sm flex justify-end">
+                <div className={styles.warningText}>
                     Too much guests for {bookingData.roomsCount.length > 1 ? 'rooms' : 'room'}
                 </div> 
             ))}

@@ -40,7 +40,7 @@ const OfferDetails = ({ setNavbarBg }) => {
                         <Link to={bookingUrl}><div className={`${styles.button} text-2xl ml-2 text-white w-fit bg-secondary text-shadow-xl hover:text-shadow-none hover:bg-white hover:text-secondary border-2 border-secondary`}>Booking Now</div></Link>
                     </div>
                 </div>
-                <img src={offer.mainImg} alt="chandra service" className="xl:w-[750px] w-[600px] lg:h-[540px] ss:h-[450px] h-[250px] object-cover rounded-lg" />
+                <img src={offer.img[0]} alt="chandra service" className="xl:w-[750px] w-[600px] lg:h-[540px] ss:h-[450px] h-[250px] object-cover rounded-lg" />
             </div>
             <div className="lg:mt-28 mt-16 w-4/5">
                 <div className="ss:w-[400px] w-2/3 mx-auto text-center font-bold text-primary ss:text-4xl text-3xl border-b-4 pb-4 border-secondary">Offer Details</div>
@@ -49,7 +49,7 @@ const OfferDetails = ({ setNavbarBg }) => {
                     {offer.detailList?.map((dlist, index) => (<li key={index}>{dlist}</li>))}
                 </ul>
                 <div className='flex flex-row flex-wrap justify-center items-center mt-14 mb-10'>
-                    {offer.otherImg?.map((img, index) => (
+                    {offer.img?.map((img, index) => ((index > 0) &&
                         <img src={img} key={index} alt="chandra service" className='ss:w-[440px] w-11/12 ss:h-[300px] h-[200px] object-cover rounded-lg ss:mx-5 mx-0 my-5' />
                     ))}
                 </div>
@@ -57,9 +57,9 @@ const OfferDetails = ({ setNavbarBg }) => {
             <div className="w-5/6 mb-28">
                 <div className="border-t-[1px] border-primary/20 text-3xl pt-7 font-bold">Other Offers :</div>
                 <div className="flex xl:hover:overflow-x-scroll overflow-x-scroll mt-5 pb-5">
-                    {otherOffer.map(({ mainImg, _id, title, detail }) => (
+                    {otherOffer.map(({ img, _id, title, detail }) => (
                         <div key={_id}>
-                            <Thumbnail imgW="270px" imgH="340px" imgSrc={mainImg} imgAlt="chandra service" head={title} detail={detail} linkTo={`${offerUrl}/details/${_id}`} />
+                            <Thumbnail imgW="270px" imgH="340px" imgSrc={img[0]} imgAlt="chandra service" head={title} detail={detail} linkTo={`${offerUrl}/details/${_id}`} />
                         </div>
                     ))}
                 </div>

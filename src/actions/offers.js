@@ -14,7 +14,7 @@
 //     }
 // };
 
-// export const getOffer = (id) => async (dispatch) => {
+// export const getOfferById = (id) => async (dispatch) => {
 //     try {
 //         dispatch({ type: START_LOADING });
 //         const { data } = await api.fetchOffer(id); // res.data

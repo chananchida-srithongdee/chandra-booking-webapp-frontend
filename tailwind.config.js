@@ -25,6 +25,5 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-textshadow'),
-    require('tw-elements/dist/plugin')
   ],
 };
