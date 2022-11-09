@@ -10,7 +10,7 @@ import styles from './styles.js';
 const RoomDetails = ({ setNavbarBg }) => {
   // const { room } = useSelector((state) => state.rooms);
   const { id } = useParams();
-  const room = rooms.filter((room) => (room._id === id))[0]
+  const room = rooms.filter((room) => (room.type === id))[0]
 
   useEffect(() => {
     setNavbarBg('bg-primary');

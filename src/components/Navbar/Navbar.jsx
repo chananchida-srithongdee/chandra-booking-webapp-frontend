@@ -46,6 +46,7 @@ const Navbar = ({ navbarBg }) => {
             <div className={styles.container}>
                 <div className="flex items-center">
                     <Link to={homeUrl} onClick={handleClick}><img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" /></Link>
+                    <Link to={homeUrl}><div className={styles.menuText}>Home</div></Link>
                     <Link to={discoverUrl}><div className={styles.menuText}>Discover Chandra</div></Link>
                     {/* <Link to=""><div className={styles.menuText}>Events</div></Link> */}
                     <Link to={offerUrl}><div className={styles.menuText}>Offers</div></Link>
@@ -58,6 +59,7 @@ const Navbar = ({ navbarBg }) => {
                 </div>
 
                 <div className={`${toggle ? 'block' : 'hidden'} ${styles.menuTextContainer} ${((scrollY && toggle) || bgMenuDrop) ? 'bgfadeyellow' : 'bg-slate-50/20'}`}>
+                    <Link to={homeUrl} onClick={handleClick}><div className={styles.menuTextCol}>Home</div></Link>
                     <Link to={bookingUrl} onClick={handleClick}><div className={styles.menuTextCol}>Check Rates</div></Link>
                     <Link to={discoverUrl} onClick={handleClick}><div className={styles.menuTextCol}>Discover Chandra</div></Link>
                     {/* <Link to="" onClick={handleClick}><div className={styles.menuTextCol}>Events</div></Link> */}
