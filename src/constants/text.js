@@ -134,7 +134,7 @@ export const offers = [
 
 export const rooms = [
   {
-    _id: '1',
+    type: 'Superior',
     img: [sup0, sup1, sup2, sup3, sup4],
     title: 'Superior Room',
     maxPerson: 3,
@@ -157,7 +157,7 @@ export const rooms = [
     rules: ['Non-smoking']
   },
   {
-    _id: '2',
+    type: 'Deluxe',
     img: [deluxe0, deluxe1, deluxe2, deluxe3, deluxe4],
     title: 'Deluxe Room',
     maxPerson: 3,
@@ -180,7 +180,7 @@ export const rooms = [
     rules: ['Non-smoking']
   },
   {
-    _id: '3',
+    type: 'Beach',
     img: [beach0, beach1, beach2, beach3, beach4],
     title: 'Beach House',
     maxPerson: 2,
@@ -203,7 +203,7 @@ export const rooms = [
     rules: ['Non-smoking']
   },
   {
-    _id: '4',
+    type: 'Family',
     img: [family0, family1, family2, family3, family4],
     title: 'Family Premium',
     maxPerson: 5,

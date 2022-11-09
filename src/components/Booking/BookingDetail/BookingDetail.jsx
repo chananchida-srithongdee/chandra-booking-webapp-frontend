@@ -1,44 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './styles.js';
 
-import BookRoom from './BookRoom.jsx';
-import { Button } from '@mui/material';
-
-const BookingDetail = ({ bookingData, totalPayment, totalNights, isPayment, setIsPayment }) => {
-  const { guest, checkInDate, checkOutDate, roomsCount } = bookingData;
-  const [disablePayButton, setDisablePayButton] = useState(true);
-  
-  const handlePayment = () => {
-    var checkRoom = false;
-    for(let room of roomsCount){
-      if(room.bf > 0 || room.nobf > 0){
-        checkRoom = true;
-        break
-      }
-    }
-    if(guest.adult > 0 && checkInDate && checkOutDate && roomsCount && checkRoom){
-      setIsPayment(true)
-    }
-  }
-
-  const handleGoBack = () => {
-    setIsPayment(false)
-  }
-
-  useEffect(() => {
-    var checkRoom = false;
-    for(let room of roomsCount){
-      if(room.bf > 0 || room.nobf > 0){
-        checkRoom = true;
-        break
-      }
-    }
-    if(guest.adult > 0 && checkInDate && checkOutDate && roomsCount && checkRoom){
-      setDisablePayButton(false)
-    }else{
-      setDisablePayButton(true)
-    }
-  }, [bookingData])
+const BookingDetail = ({ bookingData, totalNights }) => {
+  const { guest, checkIn_date, checkOut_date, roomType, breakfast } = bookingData;
   
   return (
     <div className="w-96 bg-primary flex flex-col justify-center px-8 py-6 rounded-xl h-fit">
@@ -46,12 +10,12 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights, isPayment, setI
         <div className="flex justify-between mb-3">
           <div>
             <div className={styles.headText}>Check-In</div>
-            <div className={styles.subText}>{checkInDate}</div>
+            <div className={styles.subText}>{checkIn_date}</div>
             <div className={styles.subsubText}>After 2:00 PM</div>
           </div>
           <div>
             <div className={styles.headText}>Check-Out</div>
-            <div className={styles.subText}>{checkOutDate ? checkOutDate : 'No check out date'}</div>
+            <div className={styles.subText}>{checkOut_date ? checkOut_date : 'No check out date'}</div>
             <div className={styles.subsubText}>Before 12:00 PM</div>
           </div>
         </div>
@@ -60,17 +24,33 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights, isPayment, setI
             {totalNights} {totalNights > 1 ? 'Nights' : 'Night'}<br />
             {guest.adult} {guest.adult > 1 ? 'Adults' : 'Adult'} {guest.child} {guest.child > 1 ? 'Children' : 'Child'} (6-12 years)<br />
           </div>
+          {roomType.title && 
           <div className="py-3">
-            {roomsCount.map((room) => ((room.bf > 0 || room.nobf > 0) && (
-              <div key={room.id}>
-                <BookRoom room={room} totalNights={totalNights} />
+            <div className={`${styles.roomText} flex justify-between`}>
+              <div>{roomType.title}</div>
+              <div>THB {roomType.price.toLocaleString()}</div>
+            </div>
+            <div className='flex justify-between'>
+              <div className="xs:ml-3">
+              {breakfast && (
+                <div className={`${styles.subroomText}`}>
+                  1 Room (Breakfast)
+                </div>
+              )}
+              {!breakfast > 0 && (
+                <div className={`${styles.subroomText}`}>
+                  1 Room (no Breakfast)
+                </div>
+              )}
               </div>
-            )))}
+              <div className='text-white text-xs text-right'>Per Night</div>
+            </div>
           </div>
+          }
         </div>
         <div className={`${styles.headText} flex justify-between`}>
           <div>Total :</div>
-          <div>THB {totalPayment.toLocaleString()}</div>
+          <div>THB {(roomType.price*totalNights).toLocaleString()}</div>
         </div>
         <ul className='mt-2 ml-5 text-sm text-white list-disc'>
             <li className='text-red-500 text-shadow-md'>*Need at least one adult</li>
@@ -79,11 +59,6 @@ const BookingDetail = ({ bookingData, totalPayment, totalNights, isPayment, setI
             <li>You can buy additional breakfast coupons at hotel</li>
             <li>You can ask for an extra bed at hotel</li>
         </ul>
-        {isPayment ? (
-          <Button variant='outlined' color='white' style={styles.button} onClick={handleGoBack}>◀ Edit your stay</Button>
-        ) : (
-          <Button variant='contained' color='secondary' style={styles.button} disabled={disablePayButton} onClick={handlePayment}>Continue to payment</Button>
-        )}
     </div>
   )
 }

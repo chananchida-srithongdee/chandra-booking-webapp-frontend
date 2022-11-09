@@ -4,11 +4,10 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 import styles from './styles';
-import { addYears } from 'date-fns';
-import { addDays } from 'date-fns/esm';
+import { addDays, addMonths } from 'date-fns/esm';
 
 const DateSelect = ({ bookingData, setBookingData }) => {
-    const maxDate = addYears(new Date(), 1);
+    const maxDate = addMonths(new Date(), 3);
 
     const [date, setDate] = useState([{ startDate: new Date(), endDate: addDays(new Date(), 1), key: 'selection' }]);
     const [showSelectDate, setShowSelectDate] = useState(false);
@@ -32,9 +31,9 @@ const DateSelect = ({ bookingData, setBookingData }) => {
         const checkIn = new Date(date[0].startDate)
         const checkOut = new Date(date[0].endDate)
         if(date[0].startDate.toDateString() === date[0].endDate.toDateString()){
-            setBookingData({ ...bookingData, checkInDate: checkIn.toDateString(), checkOutDate: '' })
+            setBookingData({ ...bookingData, checkIn_date: checkIn.toDateString(), checkOut_date: '' })
         }else{
-            setBookingData({ ...bookingData, checkInDate: checkIn.toDateString(), checkOutDate: checkOut.toDateString() })
+            setBookingData({ ...bookingData, checkIn_date: checkIn.toDateString(), checkOut_date: checkOut.toDateString() })
         }
 
     },[date])
@@ -44,18 +43,18 @@ const DateSelect = ({ bookingData, setBookingData }) => {
             <div className={`${styles.selectBtn} flex w-full`} onClick={handleDateShow}>
                 <div className="flex-1">
                     <div className={`${styles.headText}`}>Check-In</div>
-                    <div className={styles.subText}>{bookingData.checkInDate}</div>
+                    <div className={styles.subText}>{bookingData.checkIn_date}</div>
                 </div>
                 <div className="flex-1">
                     <div className={`${styles.headText}`}>Check-Out</div>
-                    <div className={styles.subText}>{bookingData.checkOutDate ? bookingData.checkOutDate : 'Please select check out date'}</div>
+                    <div className={styles.subText}>{bookingData.checkOut_date ? bookingData.checkOut_date : 'Please select check out date'}</div>
                 </div>
                 <div className="items-center flex">
                     {showSelectDate ? <ArrowDropUpIcon fontSize='large' /> : <ArrowDropDownIcon fontSize='large' />}
                 </div>
             </div>
             {showSelectDate && (
-            <div className="absolute shadow-xl">
+            <div className="absolute shadow-xl z-10">
                 <DateRange
                     editableDateInputs={true}
                     onChange={item => setDate([item.selection])}

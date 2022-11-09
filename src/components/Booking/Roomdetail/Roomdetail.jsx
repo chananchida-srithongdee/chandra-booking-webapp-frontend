@@ -1,16 +1,23 @@
 import DoNotDisturbIcon from '@mui/icons-material/DoNotDisturb';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { roomDetailUrl } from '../../../constants/pathUrl';
-import RoomCountButton from './RoomCountButton.jsx';
 import styles from './styles'
 
-const Roomdetail = ({ room, bookingData, setBookingData }) => {
+const Roomdetail = ({ room, bookingData, setBookingData, scrollRef }) => {
 
-  const [showLimitRoom, setShowLimitRoom] = useState(false);
+  const submitCondition = bookingData.checkIn_date && bookingData.checkOut_date && bookingData.guest.adult > 0;
 
-  //!! use available room from roomstate and display it if less than 4 room available
+  const handleChooseRoom = (e) => {
+    if(submitCondition){
+      if(e.target.getAttribute('bf') === 'false'){
+        setBookingData({ ...bookingData, breakfast: false, roomType: { title: room.title, price: room.price.min}})
+      }else{
+        setBookingData({ ...bookingData, breakfast: true, roomType: { title: room.title, price: room.price.max}})
+      }
+    }
+    scrollRef.current.scrollIntoView({behavior: "smooth"});
+  }
 
   return (
     <div className="w-full border-[1px] p-5 my-4 rounded-xl border-black/20 flex sm:flex-row flex-col">
@@ -45,13 +52,22 @@ const Roomdetail = ({ room, bookingData, setBookingData }) => {
               )))}
             </div>
           </div>
-          <Link to={`${roomDetailUrl}/${room._id}`} target="_blank"><div className={styles.btn}>More Room Details</div></Link>
+          <Link to={`${roomDetailUrl}/${room.type}`} target="_blank"><div className={styles.btn}>More Room Details</div></Link>
         </div>
-        <RoomCountButton bookingData={bookingData} setBookingData={setBookingData} room={room} isBf={false} setShowLimitRoom={setShowLimitRoom} />
-        <RoomCountButton bookingData={bookingData} setBookingData={setBookingData} room={room} isBf={true} setShowLimitRoom={setShowLimitRoom} />
-        {showLimitRoom && (
-            <div className='text-red-600 text-right pt-3 text-md font-bold'>No Room Available</div>
-        )}
+        <div className={`${styles.detailContainer} flex justify-between px-2 pt-3 xl:pb-14 h-full`}>
+            <div>
+                <div className={styles.price}>THB {room.price.min.toLocaleString()}</div>
+                <div className="text-xs text-primary ml-1 mt-1">Per Night<br/>Excluding Taxes & Fees<br/>No Breakfast</div>
+            </div>
+            <button disabled={!submitCondition} onClick={handleChooseRoom} bf='false' className={styles.bookingbtn}>Booking Now</button>
+        </div>
+        <div className={`${styles.detailContainer} flex justify-between px-2 pt-3 xl:pb-14 h-full`}>
+            <div>
+                <div className={styles.price}>THB {room.price.max.toLocaleString()}</div>
+                <div className="text-xs text-primary ml-1 mt-1">Per Night<br/>Excluding Taxes & Fees<br/>With Breakfast</div>
+            </div>
+            <button disabled={!submitCondition} onClick={handleChooseRoom} bf='true' className={styles.bookingbtn}>Booking Now</button>
+        </div>
       </div>
     </div>
   )

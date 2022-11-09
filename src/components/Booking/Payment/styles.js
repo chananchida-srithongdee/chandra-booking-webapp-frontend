@@ -1,7 +1,8 @@
 const styles = {
-    row: "flex mt-4",
-    firstHalf: "w-1/2 mr-6",
-    half: "w-1/2",
+    flexCenter: "flex justify-center items-center",
+    row: "flex mt-4 sm:flex-row flex-col sm:space-x-6",
+    firstHalf: "sm:w-1/2 w-full",
+    half: "sm:w-1/2 w-full sm:mt-0 mt-4",
     headText: "text-2xl text-primary mb-4"
 }
 
