@@ -11,36 +11,32 @@ import Booking from './components/Booking/Booking.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
 import RoomDetails from './components/RoomDetails/RoomDetails.jsx';
 import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl } from './constants/pathUrl.js';
-  
-  const App = () => {
-    const [navbarBg, setNavbarBg] = useState('');
 
-    return (
-    <BrowserRouter>
-        <div>
-            <Navbar navbarBg={navbarBg}/>
+const App = () => {
+   const [navbarBg, setNavbarBg] = useState('');
+
+   return (
+      <BrowserRouter>
+         <div>
+            <Navbar navbarBg={navbarBg} />
             <Routes>
-                <Route path={contactUsUrl} exact element={<ContactUs setNavbarBg={setNavbarBg} />} />
-                <Route path={discoverUrl} exact element={<Discover setNavbarBg={setNavbarBg} />} />
-                <Route path={homeUrl} exact element={<Home setNavbarBg={setNavbarBg} />} />
-                
-                <Route path={offerUrl} exact element={<Offers setNavbarBg={setNavbarBg} />} />
-                <Route path={offerUrl + '/details/:id'} exact element={<OfferDetails setNavbarBg={setNavbarBg} />} />
+               <Route path={contactUsUrl} exact element={<ContactUs setNavbarBg={setNavbarBg} />} />
+               <Route path={discoverUrl} exact element={<Discover setNavbarBg={setNavbarBg} />} />
+               <Route path={homeUrl} exact element={<Home setNavbarBg={setNavbarBg} />} />
 
-                <Route path={bookingUrl} exact element={<Booking setNavbarBg={setNavbarBg} />} />
+               <Route path={offerUrl} exact element={<Offers setNavbarBg={setNavbarBg} />} />
+               <Route path={offerUrl + '/details/:id'} exact element={<OfferDetails setNavbarBg={setNavbarBg} />} />
 
-                <Route path={roomDetailUrl + '/:id'} exact element={<RoomDetails setNavbarBg={setNavbarBg} />} />
+               <Route path={bookingUrl} exact element={<Booking setNavbarBg={setNavbarBg} />} />
 
-                <Route
-                    path="*"
-                    element={<Navigate to={homeUrl} replace />}
-                />
+               <Route path={roomDetailUrl + '/:id'} exact element={<RoomDetails setNavbarBg={setNavbarBg} />} />
+
+               <Route path="*" element={<Navigate to={homeUrl} replace />} />
             </Routes>
             <Footer />
-        </div>
-    </BrowserRouter>
-    
-  );
-}
+         </div>
+      </BrowserRouter>
+   );
+};
 
 export default App;
