@@ -10,7 +10,7 @@
 //         dispatch({ type: FETCH_OFFERS, payload: data });
 //         dispatch({ type: END_LOADING });
 //     } catch (error) {
-//         console.log(error);        
+//         console.log(error);
 //     }
 // };
 
@@ -22,7 +22,6 @@
 //         dispatch({ type: FETCH_OFFER, payload: data });
 //         dispatch({ type: END_LOADING });
 //     } catch (error) {
-//         console.log(error);        
+//         console.log(error);
 //     }
 // };
-

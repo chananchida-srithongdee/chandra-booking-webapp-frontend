@@ -4,8 +4,8 @@ import offers from './offers.js';
 import rooms from './rooms.js';
 
 export const store = configureStore({
-  reducer: {
-    offers,
-    rooms
-  },
+   reducer: {
+      offers,
+      rooms,
+   },
 });
