@@ -234,3 +234,11 @@ export const rooms = [
     rules: ['Non-smoking']
   },
 ];
+
+  export const events = [
+    {
+    //  _id:'1',
+    //  mainImg:, 
+    },
+    
+  ];
