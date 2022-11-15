@@ -49,6 +49,20 @@ import sup2 from "./booking/superior/2.jpg";
 import sup3 from "./booking/superior/3.jpg";
 import sup4 from "./booking/superior/4.jpg";
 
+import wd_1 from './allevents/wd_1.svg';
+import co_1 from './allevents/co_1.jpg';
+import so_1 from './allevents/so_1.jpg';
+
+import ev1_0 from './allevents/ev1_0.jpg';
+import ev1_1 from './allevents/ev1_1.jpg';
+import ev1_2 from './allevents/ev1_2.jpg';
+import ev1_3 from './allevents/ev1_3.jpg';
+import ev1_4 from './allevents/ev1_4.jpg';
+import ev1_5 from './allevents/ev1_5.jpg';
+import ev1_6 from './allevents/ev1_6.jpg';
+import ev1_7 from './allevents/ev1_7.jpg';
+
+
 
 export {
   logo,
@@ -97,6 +111,20 @@ export {
   sup2,
   sup3,
   sup4,
+
+  wd_1,
+  co_1,
+  so_1,
+
+  ev1_0,
+  ev1_1,
+  ev1_2,
+  ev1_3,
+  ev1_4,
+  ev1_5,
+  ev1_6,
+  ev1_7,
 };
 
 export const slideImages = [bg1, bg2, bg3];
+export const eventMainImg = [ev1_0,]

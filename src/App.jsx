@@ -9,8 +9,13 @@ import Offers from './components/Offers/Offers.jsx';
 import OfferDetails from './components/OfferDetails/OfferDetails.jsx';
 import Booking from './components/Booking/Booking.jsx';
 import ContactUs from './components/Contact/Contact.jsx';
+
 import RoomDetails from './components/RoomDetails/RoomDetails.jsx';
-import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl } from './constants/pathUrl.js';
+
+import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl, alleventUrl } from './constants/pathUrl.js';
+
+import Allevents from './components/Allevents/Allevents.jsx';
+import EventDetails from './components/EventDetails/EventDetails.jsx';
   
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');
@@ -26,6 +31,9 @@ import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl
                 
                 <Route path={offerUrl} exact element={<Offers setNavbarBg={setNavbarBg} />} />
                 <Route path={offerUrl + '/details/:id'} exact element={<OfferDetails setNavbarBg={setNavbarBg} />} />
+
+                <Route path={alleventUrl} exact element={<Allevents setNavbarBg={setNavbarBg} />} />
+                <Route path={alleventUrl + '/details/:id'} exact element={<EventDetails setNavbarBg={setNavbarBg} />} />
 
                 <Route path={bookingUrl} exact element={<Booking setNavbarBg={setNavbarBg} />} />
 

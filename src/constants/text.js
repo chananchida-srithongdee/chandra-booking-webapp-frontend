@@ -1,5 +1,6 @@
-import { disFood, disMassage, disYoga, offer1, offer2, offer3, offer4, offer1_0, offer1_1, offer1_2, offer2_0, offer2_1, offer2_2, offer3_0, offer3_1, offer3_2, offer4_0, offer4_1, offer4_2,
-  beach0, beach1, beach2, beach3, beach4, deluxe0,  deluxe1,  deluxe2,  deluxe3,  deluxe4, family0, family1, family2, family3, family4, sup0, sup1, sup2, sup3, sup4,
+import {
+  disFood, disMassage, disYoga, offer1, offer2, offer3, offer4, offer1_0, offer1_1, offer1_2, offer2_0, offer2_1, offer2_2, offer3_0, offer3_1, offer3_2, offer4_0, offer4_1, offer4_2,
+  beach0, beach1, beach2, beach3, beach4, deluxe0, deluxe1, deluxe2, deluxe3, deluxe4, family0, family1, family2, family3, family4, sup0, sup1, sup2, sup3, sup4, wd_1, co_1, so_1,
 } from "../images/";
 
 export const discoverData = [
@@ -48,19 +49,19 @@ export const offers = [
       'Healthy sleep kit',
       'In-room workout'
     ],
-    detail: `Restore your inner glow and return to a state of balance with a spacation at Chandra, The place to revitalise body, mind, and soul.
+    detatitlil: `Restore your inner glow and return to a state of balance with a spacation at Chandra, The place to revitalise body, mind, and soul.
 
                 The wellness offer includes a 60-minute AcuRelax treatment to relax and rejuvenate. Guests can also re-energise with an in-room Fitness Workout Kit and keep up their health regime in the privacy of the room. At the end of the day, a restful night’s sleep is enhanced with a choice of pillows, calming lavender & bergamot pillow sprays and luxurious satin eye masks.
 
                 Enjoy peace of mind when staying with Centara Hotels & Resorts as we continue to follow strict safety protocols and adhere to certified health and hygiene procedures with the comprehensive Chandra Complete Care programme.`,
     detailList: [
-        'Special room rates from THB  2,990/night',
-        'Fresh daily breakfast for 2 persons',
-        '60-min AcuRelax for 2 persons (acupressure, foot, and scalp massage)',
-        'Satin eye mask for 2 persons',
-        'Lavender & bergamot pillow spray for 2 persons',
-        'Choice of pillows',
-        'In-room Fitness Workout'
+      'Special room rates from THB  2,990/night',
+      'Fresh daily breakfast for 2 persons',
+      '60-min AcuRelax for 2 persons (acupressure, foot, and scalp massage)',
+      'Satin eye mask for 2 persons',
+      'Lavender & bergamot pillow spray for 2 persons',
+      'Choice of pillows',
+      'In-room Fitness Workout'
     ]
   },
   {
@@ -73,7 +74,7 @@ export const offers = [
       'Minimum stays from 5 nights starting at just THB 1,890++/nigth',
       'Choice of room only or room & breakfast rates',
       'Free stay for up to 2 children'
-    ], 
+    ],
     detail: `With borders open and restrictions lifted, it’s time to rediscover the excitement of travel. Make up for those lost holidays with an extended getaway with Chandra, your home away from home
 
                 Whether you need to feel the sand between your toes, breathe in that cool mountain air or enjoy the energy of a bustling city, Chandra has a destination to suit your needs. And with our long-stay special deals, you can travel with a vengeance.
@@ -82,9 +83,9 @@ export const offers = [
                 
                 Chantara has a selection of spacious rooms, suites and beach house, all equipped with convenient in-room facilities including high-speed Wi-Fi access.`,
     detailList: [
-      'Offer applicable to new bookings only',  
-      'Minimum of 5, 7, 10 or 14-night stay.',  
-      'Complimentary breakfast.', 
+      'Offer applicable to new bookings only',
+      'Minimum of 5, 7, 10 or 14-night stay.',
+      'Complimentary breakfast.',
       'Up to 2 children under 12 years old can stay for free, depending on room configuration and only when sharing existing beds with parents or when an extra bed is not required.',
       'Additional breakfast surcharge is applicable for all children sharing existing bed with parents.',
       'Surcharge may be applied for stays on Saturdays and public holiday.',
@@ -111,7 +112,7 @@ export const offers = [
                 With the suites and private villa escape offer, travellers are invited to a spacious suites or luxuriate in a seamless villa experience with free breakfast and dinner throughout your stay in hotels and resorts.
                 
                 Enjoy peace of mind when staying with Centara Hotels & Resorts as we continue to follow strict safety protocols and adhere to certified health and hygiene procedures with the comprehensive Chandra Complete Care programme..`,
-  },{
+  }, {
     _id: '4',
     mainImg: offer4,
     otherImg: [offer4_0, offer4_1, offer4_2],
@@ -120,8 +121,8 @@ export const offers = [
     offerList: [
       'Experience everything that Chandra has to offer at THB 4,590 per person, per day.',
       'Unlimited dining and drinks across our dining destinations, unlimited experiences, limitless massages, spa therapies and so much more.'
-    ], 
-    detail: `Chandra Unlimited enables guests to experience everything there is at chandra.` ,
+    ],
+    detail: `Chandra Unlimited enables guests to experience everything there is at chandra.`,
     detailList: [
       'Unlimited dining at our bars, restaurants and In-Villa Dining',
       'Unlimited access to visiting Michelin-starred chef dinners and onsite experiences',
@@ -144,12 +145,12 @@ export const rooms = [
     title: 'Superior Room',
     maxPerson: 3,
     room: [
-      {type: 'Bedroom', quantity: 1},
-      {type: 'Bathroom', quantity: 1},
+      { type: 'Bedroom', quantity: 1 },
+      { type: 'Bathroom', quantity: 1 },
     ],
-    beds : [
-      {type: 'Twin', quantity: 0},
-      {type: 'King', quantity: 1},
+    beds: [
+      { type: 'Twin', quantity: 0 },
+      { type: 'King', quantity: 1 },
     ],
     price: {
       min: 1590,
@@ -168,12 +169,12 @@ export const rooms = [
     title: 'Deluxe Room',
     maxPerson: 3,
     room: [
-      {type: 'Bedroom', quantity: 1},
-      {type: 'Bathroom', quantity: 1},
+      { type: 'Bedroom', quantity: 1 },
+      { type: 'Bathroom', quantity: 1 },
     ],
-    beds : [
-      {type: 'Twin', quantity: 2},
-      {type: 'King', quantity: 0},
+    beds: [
+      { type: 'Twin', quantity: 2 },
+      { type: 'King', quantity: 0 },
     ],
     price: {
       min: 1590,
@@ -181,7 +182,7 @@ export const rooms = [
     },
     detail: `35-sqm room with garden, twin beds, working desk, shower, free Wi-Fi. Suitable for up to 3 guests
 
-    A cocoon of contemporary comfort, our Deluxe rooms either feature  lush green views of  coconut grove. Light and bright, the 35-sqm living space includes a plush twin bed, a work desk area and a spacious bathroom with a glass-enclosed shower. Connect with work, catch a movie or simply sink into relaxation.`,     
+    A cocoon of contemporary comfort, our Deluxe rooms either feature  lush green views of  coconut grove. Light and bright, the 35-sqm living space includes a plush twin bed, a work desk area and a spacious bathroom with a glass-enclosed shower. Connect with work, catch a movie or simply sink into relaxation.`,
     amenities: ['Safe in Room', 'Free Wifi', 'Refrigerator', 'Air Conditioning', 'Television'],
     rules: ['Non-smoking']
   },
@@ -192,12 +193,12 @@ export const rooms = [
     title: 'Beach House',
     maxPerson: 2,
     room: [
-      {type: 'Bedroom', quantity: 1},
-      {type: 'Bathroom', quantity: 1},
+      { type: 'Bedroom', quantity: 1 },
+      { type: 'Bathroom', quantity: 1 },
     ],
-    beds : [
-      {type: 'Twin', quantity: 0},
-      {type: 'King', quantity: 1},
+    beds: [
+      { type: 'Twin', quantity: 0 },
+      { type: 'King', quantity: 1 },
     ],
     price: {
       min: 3990,
@@ -216,12 +217,12 @@ export const rooms = [
     title: 'Family Premium',
     maxPerson: 5,
     room: [
-      {type: 'Bedroom', quantity: 1},
-      {type: 'Bathroom', quantity: 1},
+      { type: 'Bedroom', quantity: 1 },
+      { type: 'Bathroom', quantity: 1 },
     ],
-    beds : [
-      {type: 'Twin', quantity: 2},
-      {type: 'King', quantity: 1},
+    beds: [
+      { type: 'Twin', quantity: 2 },
+      { type: 'King', quantity: 1 },
     ],
     price: {
       min: 11990,
@@ -235,10 +236,48 @@ export const rooms = [
   },
 ];
 
-  export const events = [
-    {
-    //  _id:'1',
-    //  mainImg:, 
-    },
+export const events = [
+  {
+    _id: '1',
+    mainImg: wd_1,
+    eventtype: "Wedding Events",
+    title: "Tie the Knot in Paradise",
+    detail: "Make your wedding day even more memorable with a beachfront setting and dedicated events team to exceed your dreams at Chandra",
+    butt:"Plan Your Wedding",
     
-  ];
+    subject: "Plan Your Dream Day With Our Expert Coordinators",
+    inner: "The Place To Love",
+    fidata: "Whether exchanging vows on the beach next to the Andaman Sea, renewing your commitment to one another, or celebrating an engagement or special anniversary, Chandra lush tropical atmosphere and dedicated wedding team can make your dream day a reality.",
+    sedata: "Choose to celebrate in our versatile event space or opt to hold the festivities at The Orchid, which accommodates up to 50 guests. Along with the property’s stunningly lush setting, you’ll also access a host of extras, including special rates, personalised menus and more.",
+
+  },
+  {
+    _id: '2',
+    mainImg: co_1,
+    eventtype: "Corporate Events",
+    title: "Strengthen work relationships in a serene tropical atmosphere",
+    detail: "Opportunity to synergise with team building and corporate retreats at Chandra",
+    butt:"Plan Your Event",
+
+    subject: "Hosting A Corporate Event With Us",
+    inner: "A Place To Connect",
+    fidata: "With its exotic surroundings and a 90-square-metre versatile function room that can be adapted to a range of uses, Chandra Villas  near Karon Beach welcomes small groups for meetings and other corporate events.",
+    sedata: "While the resort’s versatile meeting room features a full range of professional audiovisual equipment, The Orchid restaurant and bar can also host 30 people seated theatre-style or 50 guests for cocktail receptions. For coffee breaks, your attendees will appreciate open air refreshments in lush gardens boasting sea views.",
+
+  },
+  {
+    _id: '3',
+    mainImg: so_1,
+    eventtype: "Social Events",
+    title: "Special Occasions to Remember",
+    detail: "Bringing people together is what we do at Centara. We offer unforgettable venues, impeccable service and professional events management to make every occasion truly exceptional.",
+    butt:"Plan Your Event",
+    
+    subject: "Bring Your Social Events To Life",
+    inner: "We’ll Make It Unforgettable",
+    fidata: "It’s the special celebrations that allow you to strengthen bonds. It’s the intimate family parties that make lasting memories. It’s the private concerts that draw like-minded individuals together. At Chandra, we help you plan and host social events that people will remember forever.",
+    sedata: "Every social event is made of so many special moments. Let it be a graduation ceremony, a dinner banquet or a birthday bash with your closest friends, we strive to make the best impression. ",
+
+  },
+
+];
