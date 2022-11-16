@@ -1,6 +1,6 @@
 import {
   disFood, disMassage, disYoga, offer1, offer2, offer3, offer4, offer1_0, offer1_1, offer1_2, offer2_0, offer2_1, offer2_2, offer3_0, offer3_1, offer3_2, offer4_0, offer4_1, offer4_2,
-  beach0, beach1, beach2, beach3, beach4, deluxe0, deluxe1, deluxe2, deluxe3, deluxe4, family0, family1, family2, family3, family4, sup0, sup1, sup2, sup3, sup4, wd_1, co_1, so_1,
+  beach0, beach1, beach2, beach3, beach4, deluxe0, deluxe1, deluxe2, deluxe3, deluxe4, family0, family1, family2, family3, family4, sup0, sup1, sup2, sup3, sup4, wd_1, co_1, so_1, wdm_1, com_1, wdm_2, wdm_3, com_2, com_3, som_2, som_3, som_1,
 } from "../images/";
 
 export const discoverData = [
@@ -49,7 +49,7 @@ export const offers = [
       'Healthy sleep kit',
       'In-room workout'
     ],
-    detatitlil: `Restore your inner glow and return to a state of balance with a spacation at Chandra, The place to revitalise body, mind, and soul.
+    detail: `Restore your inner glow and return to a state of balance with a spacation at Chandra, The place to revitalise body, mind, and soul.
 
                 The wellness offer includes a 60-minute AcuRelax treatment to relax and rejuvenate. Guests can also re-energise with an in-room Fitness Workout Kit and keep up their health regime in the privacy of the room. At the end of the day, a restful night’s sleep is enhanced with a choice of pillows, calming lavender & bergamot pillow sprays and luxurious satin eye masks.
 
@@ -240,6 +240,8 @@ export const events = [
   {
     _id: '1',
     mainImg: wd_1,
+    dataImg:wdm_1,
+    otherImg:[wdm_2,wdm_3],
     eventtype: "Wedding Events",
     title: "Tie the Knot in Paradise",
     detail: "Make your wedding day even more memorable with a beachfront setting and dedicated events team to exceed your dreams at Chandra",
@@ -254,6 +256,8 @@ export const events = [
   {
     _id: '2',
     mainImg: co_1,
+    dataImg: com_1,
+    otherImg:[com_2,com_3],
     eventtype: "Corporate Events",
     title: "Strengthen work relationships in a serene tropical atmosphere",
     detail: "Opportunity to synergise with team building and corporate retreats at Chandra",
@@ -268,6 +272,8 @@ export const events = [
   {
     _id: '3',
     mainImg: so_1,
+    dataImg: som_1,
+    otherImg:[som_2,som_3],
     eventtype: "Social Events",
     title: "Special Occasions to Remember",
     detail: "Bringing people together is what we do at Centara. We offer unforgettable venues, impeccable service and professional events management to make every occasion truly exceptional.",
