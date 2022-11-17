@@ -6,18 +6,15 @@ import { events } from "../../constants/text.js";
 import { bookingUrl, alleventUrl } from "../../constants/pathUrl.js";
 import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
-// import Thumbnail from "../Thumbnail/Thumbnail.jsx";
-// import { getOffer } from '../../actions/offers.js';
 
 const EventDetails = ({ setNavbarBg }) => {
-  // const { offer, offers, isLoading } = useSelector((state) => state.offers);
   const { id } = useParams();
   const event = events.filter(({ _id }) => _id === id)[0];
-  // const otherOffer = offers.filter(({ _id }) => _id !== id);
 
   const handleSubmit = () => {
     return;
   };
+
   useEffect(() => {
     setNavbarBg("");
     window.scrollTo(0, 0);
@@ -81,84 +78,159 @@ const EventDetails = ({ setNavbarBg }) => {
       </div>
       <div className="flex flex-row flex-wrap justify-center items-center ">
         <form
-          className="flex flex-col justify-start gap-4 w-full px-[20rem] "
+          className="flex flex-col justify-start gap-4 px-[20px]"
           onSubmit={handleSubmit}
         >
-          <span className={`${styles.headText}`}>Contact Info</span>
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "50ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <div>
-              <TextField
-                required
-                id="outlined-required"
-                label="Prefix"
-  
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Prefix"
-  
-              />
+          {/* <div className="flex  gap-[1rem]">
+            <div className="pr-10">
+              <span className={`${styles.headText} flex flex-row `}>
+                Contact Info
+              </span>
+              <div className="flex flex-col mb-[1rem]">
+                <div className={`${styles.flexCenter}`}>
+                  <TextField
+                    inputProps={{ style: styles.prefix }}
+                    InputLabelProps={{
+                      style: { fontSize: "13px", marginTop: "2px" },
+                    }}
+                    label="Prefix"
+                    variant="outlined"
+                    required
+                  />
+                  <TextField
+                    inputProps={{ style: styles.fistName }}
+                    label="First Name"
+                    variant="outlined"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-[1rem]">
+                <TextField
+                  inputProps={{ style: styles.textField }}
+                  label="Last Name"
+                  variant="outlined"
+                  required
+                  fullWidth
+                />
+                <TextField
+                  inputProps={{ style: styles.textField }}
+                  label="Mobile phone"
+                  variant="outlined"
+                  required
+                  fullWidth
+                />
+                <TextField
+                  inputProps={{ style: styles.textField }}
+                  label="Email Address"
+                  variant="outlined"
+                  required
+                  helperText="This is the Email we will send your confirmation to."
+                  fullWidth
+                />
+              </div>
             </div>
-            <TextField
-                required
-                id="outlined-required"
-                label="Prefix"
-  
-              />
-          </Box>
-          {/* <div className="flex py-2">
-            <div className={`${styles.flexCenter}`}>
-              <TextField
-              
-                inputProps={{ style: styles.prefix }}
-                InputLabelProps={{
-                  style: { fontSize: "13px", marginTop: "2px" },
-                }}
-                label="Prefix"
-                variant="outlined"
-                required
-              />
-              <TextField
-                inputProps={{ style: styles.fistName }}
-                label="First Name"
-                variant="outlined"
-                required
-              />
-              <TextField
-                inputProps={{ style: styles.textField }}
-                label="Last Name"
-                variant="outlined"
-                required
-                fullWidth
-              />
-              <TextField
-                inputProps={{ style: styles.textField }}
-                label="Mobile phone"
-                variant="outlined"
-                required
-                fullWidth
-              />
-              <TextField
-                inputProps={{ style:styles.textField }}
-                label="Email Address"
-                variant="outlined"
-                required
-                helperText="This is the Email we will send your confirmation to."
-                fullWidth
-              />
-            </div>
-            <span className={`${styles.headText} flex flex-row flex-wrap`}>
-              Company Information
-            </span>
           </div> */}
+
+          <div className="flex flex-wrap justify-center ">
+            <div className="pr-10">
+              <span className={`${styles.headText} flex flex-row mb-4`}>
+                Contact Info
+              </span>
+              <div className="flex mb-[1rem]">
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.prefix }}
+                  label="Prefix"
+                />
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.fistName }}
+                  label="Frist Name"
+                />
+              </div>
+              <div className="flex flex-col gap-[1rem]">
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.textField }}
+                  label="Last Name"
+                />
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.textField }}
+                  label="Mobile Phone"
+                />
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.textField }}
+                  label="Email Address"
+                  helperText="This is the Email we will send your confirmation to."
+                />
+              </div>
+            </div>
+            <div className="flex flex-row">
+              <div>
+                <span className={`${styles.headText} flex flex-row`}>
+                  Company Information
+                </span>
+                <Box
+                  component="form"
+                  sx={{
+                    "& .MuiTextField-root": {
+                      mt: 2,
+                      display: "flex",
+                      flexWrap: "wrap",
+                    },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <div className="flex flex-col">
+                    <TextField
+                      id="outlined-required"
+                      inputProps={{ style: styles.textField }}
+                      label="Company Name"
+                    />
+                    <TextField
+                      id="outlined-required"
+                      inputProps={{ style: styles.textField }}
+                      label="Country"
+                    />
+                    <TextField
+                      id="outlined-required"
+                      inputProps={{ style: styles.textField }}
+                      label="ZIP/Pstal Code"
+                    />
+                    <span className={`${styles.headText} mt-4`}>
+                      Additional Details and Preferences
+                    </span>
+                    <TextField
+                      placeholder="Tell us what you whould like to know or let us know if you have any special requests"
+                      variant="outlined"
+                      rows="5"
+                      required
+                      multiline
+                      fullWidth
+                      inputProps={{ style: { fontSize: "16px" } }}
+                    />
+                  </div>
+                </Box>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <button
+              className={`${styles.button} text-2xl m-[3rem] text-white w-fit bg-secondary text-shadow-xl hover:text-shadow-none hover:bg-white hover:text-secondary border-2 border-secondary`}
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

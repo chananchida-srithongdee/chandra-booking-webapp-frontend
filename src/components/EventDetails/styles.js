@@ -1,4 +1,3 @@
-import { height } from "@mui/system";
 const styles = {
   title: "cursor-default text-white text-shadow-md",
   button: "cursor-pointer rounded-full px-5 py-2 ",
@@ -6,15 +5,15 @@ const styles = {
   flexCenter: "justify-center items-center",
 
   fistName: {
-    width: "304px",
+    width: "400px",
     height: "23px",
   },
   prefix: {
-    width: "45px",
+    width: "60px",
     height: "23px",
   },
   textField: {
-    width: "374px",
+    width: "460px",
     height: "23px",
     
   },
