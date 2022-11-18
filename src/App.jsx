@@ -16,7 +16,8 @@ import { homeUrl, discoverUrl, offerUrl, bookingUrl, roomDetailUrl, contactUsUrl
 
 import Allevents from './components/Allevents/Allevents.jsx';
 import EventDetails from './components/EventDetails/EventDetails.jsx';
-  
+
+
   const App = () => {
     const [navbarBg, setNavbarBg] = useState('');
 

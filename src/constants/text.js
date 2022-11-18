@@ -285,5 +285,4 @@ export const events = [
     sedata: "Every social event is made of so many special moments. Let it be a graduation ceremony, a dinner banquet or a birthday bash with your closest friends, we strive to make the best impression. ",
 
   },
-
 ];

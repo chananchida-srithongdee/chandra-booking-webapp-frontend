@@ -1,16 +1,14 @@
-import { bg } from "date-fns/locale";
 import React, {useEffect} from "react";
 
 import { events } from "../../constants/text.js";
 import Allevent from './Allevent/Allevent.jsx'
-// import allEventDetail from '../allEventDetails/allEventDetails.jsx'
 
 
-const Allevents = ({ setNavbarBg}) => {
+const Allevents = ({setNavbarBg}) => {
     useEffect(() => {
 
         setNavbarBg('bg-primary')
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     return (

@@ -3,9 +3,14 @@ import { useParams, Link } from "react-router-dom";
 
 import styles from "./styles.js";
 import { events } from "../../constants/text.js";
-import { bookingUrl, alleventUrl } from "../../constants/pathUrl.js";
+import { bookingUrl } from "../../constants/pathUrl.js";
 import Box from "@mui/material/Box";
-import { TextField } from "@mui/material";
+import { Slider, TextField } from "@mui/material";
+import Typography from "@mui/material/Typography";
+
+function valueText(value) {
+  return ` ${value} THB`;
+}
 
 const EventDetails = ({ setNavbarBg }) => {
   const { id } = useParams();
@@ -19,6 +24,12 @@ const EventDetails = ({ setNavbarBg }) => {
     setNavbarBg("");
     window.scrollTo(0, 0);
   }, [id]);
+
+  const [value, setValue] = React.useState([907231, 2877784]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <div>
@@ -81,57 +92,6 @@ const EventDetails = ({ setNavbarBg }) => {
           className="flex flex-col justify-start gap-4 px-[20px]"
           onSubmit={handleSubmit}
         >
-          {/* <div className="flex  gap-[1rem]">
-            <div className="pr-10">
-              <span className={`${styles.headText} flex flex-row `}>
-                Contact Info
-              </span>
-              <div className="flex flex-col mb-[1rem]">
-                <div className={`${styles.flexCenter}`}>
-                  <TextField
-                    inputProps={{ style: styles.prefix }}
-                    InputLabelProps={{
-                      style: { fontSize: "13px", marginTop: "2px" },
-                    }}
-                    label="Prefix"
-                    variant="outlined"
-                    required
-                  />
-                  <TextField
-                    inputProps={{ style: styles.fistName }}
-                    label="First Name"
-                    variant="outlined"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-[1rem]">
-                <TextField
-                  inputProps={{ style: styles.textField }}
-                  label="Last Name"
-                  variant="outlined"
-                  required
-                  fullWidth
-                />
-                <TextField
-                  inputProps={{ style: styles.textField }}
-                  label="Mobile phone"
-                  variant="outlined"
-                  required
-                  fullWidth
-                />
-                <TextField
-                  inputProps={{ style: styles.textField }}
-                  label="Email Address"
-                  variant="outlined"
-                  required
-                  helperText="This is the Email we will send your confirmation to."
-                  fullWidth
-                />
-              </div>
-            </div>
-          </div> */}
-
           <div className="flex flex-wrap justify-center ">
             <div className="pr-10">
               <span className={`${styles.headText} flex flex-row mb-4`}>
@@ -168,9 +128,34 @@ const EventDetails = ({ setNavbarBg }) => {
                   required
                   id="outlined-required"
                   inputProps={{ style: styles.textField }}
+                  label="Decision By"
+                />
+                <TextField
+                  required
+                  id="outlined-required"
+                  inputProps={{ style: styles.textField }}
                   label="Email Address"
                   helperText="This is the Email we will send your confirmation to."
                 />
+                <span className={`${styles.headText} flex flex-row mb-4`}>
+                  Approximate Budget min
+                </span>
+                <div className="justify-center items-center">
+                  <Box sx={{ width: 500 }}>
+                    <Slider
+                      min={100000}
+                      max={3000000}
+                      getAriaLabel={() => "Approximate Budget min"}
+                      value={value}
+                      onChange={handleChange}
+                      valueLabelDisplay="auto"
+                      getAriaValueText={valueText}
+                    />
+                    <Typography id="non-linear-slider" gutterBottom>
+                      {valueText(value)}
+                    </Typography>
+                  </Box>
+                </div>
               </div>
             </div>
             <div className="flex flex-row">
