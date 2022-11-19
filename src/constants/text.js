@@ -312,3 +312,57 @@ export const policies = [
    'You can buy additional breakfast coupons at hotel',
    'You can ask for an extra bed at hotel',
 ];
+
+export const events = [
+   {
+      _id: '1',
+      mainImg: wd_1,
+      dataImg: wdm_1,
+      otherImg: [wdm_2, wdm_3],
+      eventtype: 'Wedding Events',
+      title: 'Tie the Knot in Paradise',
+      detail: 'Make your wedding day even more memorable with a beachfront setting and dedicated events team to exceed your dreams at Chandra',
+      butt: 'Plan Your Wedding',
+
+      subject: 'Plan Your Dream Day With Our Expert Coordinators',
+      inner: 'The Place To Love',
+      fidata:
+         'Whether exchanging vows on the beach next to the Andaman Sea, renewing your commitment to one another, or celebrating an engagement or special anniversary, Chandra lush tropical atmosphere and dedicated wedding team can make your dream day a reality.',
+      sedata:
+         'Choose to celebrate in our versatile event space or opt to hold the festivities at The Orchid, which accommodates up to 50 guests. Along with the property’s stunningly lush setting, you’ll also access a host of extras, including special rates, personalised menus and more.',
+   },
+   {
+      _id: '2',
+      mainImg: co_1,
+      dataImg: com_1,
+      otherImg: [com_2, com_3],
+      eventtype: 'Corporate Events',
+      title: 'Strengthen work relationships in a serene tropical atmosphere',
+      detail: 'Opportunity to synergise with team building and corporate retreats at Chandra',
+      butt: 'Plan Your Event',
+
+      subject: 'Hosting A Corporate Event With Us',
+      inner: 'A Place To Connect',
+      fidata:
+         'With its exotic surroundings and a 90-square-metre versatile function room that can be adapted to a range of uses, Chandra Villas  near Karon Beach welcomes small groups for meetings and other corporate events.',
+      sedata:
+         'While the resort’s versatile meeting room features a full range of professional audiovisual equipment, The Orchid restaurant and bar can also host 30 people seated theatre-style or 50 guests for cocktail receptions. For coffee breaks, your attendees will appreciate open air refreshments in lush gardens boasting sea views.',
+   },
+   {
+      _id: '3',
+      mainImg: so_1,
+      dataImg: som_1,
+      otherImg: [som_2, som_3],
+      eventtype: 'Social Events',
+      title: 'Special Occasions to Remember',
+      detail: 'Bringing people together is what we do at Centara. We offer unforgettable venues, impeccable service and professional events management to make every occasion truly exceptional.',
+      butt: 'Plan Your Event',
+
+      subject: 'Bring Your Social Events To Life',
+      inner: 'We’ll Make It Unforgettable',
+      fidata:
+         'It’s the special celebrations that allow you to strengthen bonds. It’s the intimate family parties that make lasting memories. It’s the private concerts that draw like-minded individuals together. At Chandra, we help you plan and host social events that people will remember forever.',
+      sedata:
+         'Every social event is made of so many special moments. Let it be a graduation ceremony, a dinner banquet or a birthday bash with your closest friends, we strive to make the best impression. ',
+   },
+];
