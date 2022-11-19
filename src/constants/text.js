@@ -38,6 +38,18 @@ import {
    sup2,
    sup3,
    sup4,
+   wd_1,
+   co_1,
+   so_1,
+   wdm_1,
+   com_1,
+   wdm_2,
+   wdm_3,
+   com_2,
+   com_3,
+   som_2,
+   som_3,
+   som_1,
 } from '../images/';
 
 export const discoverData = [

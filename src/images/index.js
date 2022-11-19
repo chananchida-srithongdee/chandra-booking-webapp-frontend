@@ -49,6 +49,22 @@ import sup2 from './booking/superior/2.jpg';
 import sup3 from './booking/superior/3.jpg';
 import sup4 from './booking/superior/4.jpg';
 
+import wd_1 from './allevents/wd_1.svg';
+import co_1 from './allevents/co_1.jpg';
+import so_1 from './allevents/so_1.jpg';
+
+import wdm_1 from './allevents/wdm_1.jpg';
+import wdm_2 from './allevents/wdm_2.jpg';
+import wdm_3 from './allevents/wdm_3.jpg';
+
+import com_1 from './allevents/com_1.jpg';
+import com_2 from './allevents/com_2.jpg';
+import com_3 from './allevents/com_3.jpg';
+
+import som_1 from './allevents/som_1.jpg';
+import som_2 from './allevents/som_2.jpg';
+import som_3 from './allevents/som_3.jpg';
+
 export {
    logo,
    disFood,
@@ -90,6 +106,18 @@ export {
    sup2,
    sup3,
    sup4,
+   wd_1,
+   co_1,
+   so_1,
+   wdm_1,
+   wdm_2,
+   wdm_3,
+   com_1,
+   com_2,
+   com_3,
+   som_1,
+   som_2,
+   som_3,
 };
 
 export const slideImages = [bg1, bg2, bg3];
