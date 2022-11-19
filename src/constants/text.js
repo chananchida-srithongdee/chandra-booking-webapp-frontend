@@ -155,7 +155,7 @@ export const offers = [
          'Experience everything that Chandra has to offer at THB 4,590 per person, per day.',
          'Unlimited dining and drinks across our dining destinations, unlimited experiences, limitless massages, spa therapies and so much more.',
       ],
-      detail: `Chandra Unlimited enables guests to experience everything there is at chandra.`,
+      detail: 'Chandra Unlimited enables guests to experience everything there is at chandra.',
       detailList: [
          'Unlimited dining at our bars, restaurants and In-Villa Dining',
          'Unlimited access to visiting Michelin-starred chef dinners and onsite experiences',
