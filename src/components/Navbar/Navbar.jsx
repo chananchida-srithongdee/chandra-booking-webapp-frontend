@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 import { logo } from '../../images';
 import styles from './styles';
-import { Link } from 'react-router-dom';
-import { offerUrl, discoverUrl, contactUsUrl, homeUrl, bookingUrl } from '../../constants/pathUrl';
+import { offerUrl, discoverUrl, contactUsUrl, homeUrl, bookingUrl, alleventUrl } from '../../constants/pathUrl';
 
 const Navbar = ({ navbarBg }) => {
    const [toggle, setToggle] = useState(false);
@@ -51,7 +51,9 @@ const Navbar = ({ navbarBg }) => {
                <Link to={discoverUrl}>
                   <div className={styles.menuText}>Discover Chandra</div>
                </Link>
-               {/* <Link to=""><div className={styles.menuText}>Events</div></Link> */}
+               <Link to={alleventUrl}>
+                  <div className={styles.menuText}>Events</div>
+               </Link>
                <Link to={offerUrl}>
                   <div className={styles.menuText}>Offers</div>
                </Link>
@@ -59,6 +61,7 @@ const Navbar = ({ navbarBg }) => {
                   <div className={`${styles.menuText} mr-0`}>Contact Us</div>
                </Link>
             </div>
+
             <Link to={bookingUrl}>
                <div className={styles.checkRates}>Check Rates</div>
             </Link>
@@ -77,7 +80,9 @@ const Navbar = ({ navbarBg }) => {
                <Link to={discoverUrl} onClick={handleClick}>
                   <div className={styles.menuTextCol}>Discover Chandra</div>
                </Link>
-               {/* <Link to="" onClick={handleClick}><div className={styles.menuTextCol}>Events</div></Link> */}
+               <Link to={alleventUrl} onClick={handleClick}>
+                  <div className={styles.menuTextCol}>Events</div>
+               </Link>
                <Link to={offerUrl} onClick={handleClick}>
                   <div className={styles.menuTextCol}>Offers</div>
                </Link>
