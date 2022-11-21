@@ -3,21 +3,24 @@ import { useParams, Link } from 'react-router-dom';
 import DoNotDisturbIcon from '@mui/icons-material/DoNotDisturb';
 
 import PreviewImage from './PreviewImage/PreviewImage.jsx';
+import Thumbnail from '../Thumbnail/Thumbnail.jsx';
 import { rooms } from '../../constants/text.js';
-import { bookingUrl } from '../../constants/pathUrl.js';
+import { bookingUrl, roomDetailUrl } from '../../constants/pathUrl.js';
 import styles from './styles.js';
 
 const RoomDetails = ({ setNavbarBg }) => {
-   // const { room } = useSelector((state) => state.rooms);
    const { id } = useParams();
    const room = rooms.filter((room) => room.type === id)[0];
 
+   const otherRooms = rooms.filter((room) => room.type !== id);
+
    useEffect(() => {
       setNavbarBg('bg-primary');
-      window.scrollTo(0, 0);
-
-      //dispatch(getRoomById(id))
    }, []);
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [id]);
 
    return (
       <div className="w-full ss:pt-44 pt-40 pb-20 xl:px-72 lg:px-32 px-10 caret-transparent flex flex-col justify-center items-center">
@@ -66,6 +69,16 @@ const RoomDetails = ({ setNavbarBg }) => {
                <Link to={bookingUrl}>
                   <div className={`${styles.button} mx-auto mt-8 text-2xl text-white w-fit bg-secondary border-2 border-secondary hover:bg-transparent hover:text-secondary`}>Booking Now</div>
                </Link>
+            </div>
+         </div>
+         <div className="w-full mb-28 mt-10">
+            <div className="border-t-[1px] border-primary/20 text-3xl pt-7 font-bold">Other Rooms :</div>
+            <div className="flex xl:hover:overflow-x-scroll overflow-x-scroll mt-5 pb-5">
+               {otherRooms.map(({ img, title, detail, type }) => (
+                  <div key={type}>
+                     <Thumbnail imgW="270px" imgH="340px" imgSrc={img[0]} imgAlt="chandra room" head={title} detail={detail} url={`${roomDetailUrl}/${type}`} />
+                  </div>
+               ))}
             </div>
          </div>
       </div>

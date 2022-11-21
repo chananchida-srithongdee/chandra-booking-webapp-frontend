@@ -5,8 +5,9 @@ import CheckIcon from '@mui/icons-material/Check';
 
 import { prefix, policies } from '../../../constants/text.js';
 import styles from './styles.js';
+import { createBooking } from '../../../api/index.js';
 
-const Payment = ({ bookingData, setBookingData }) => {
+const Payment = ({ bookingData, setBookingData, setIsBookingLoading, setFinishBooking, initialState }) => {
    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
    const { fname, lname, email, phone, address, addition } = bookingData;
    const [agree, setAgree] = useState(false);
@@ -14,6 +15,7 @@ const Payment = ({ bookingData, setBookingData }) => {
    const [verifyEmail, setVerifyEmail] = useState(false);
    const [seconds, setSeconds] = useState(60);
    const [timeActive, setTimeActive] = useState(false);
+
    const submitCondition = fname && lname && phone.length >= 10 && address && email && verifyEmail && agree;
 
    const handleInvalidEmail = () => {
@@ -30,7 +32,7 @@ const Payment = ({ bookingData, setBookingData }) => {
 
    const handleSendEmail = () => {
       if (emailRegex.test(email)) {
-         console.log('hi');
+         setVerifyEmail(true);
          //dispatch(verifyEmail(email)) post
          //dispatch(getVerifiedComfirm) get
 
@@ -40,12 +42,20 @@ const Payment = ({ bookingData, setBookingData }) => {
       }
    };
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       if (submitCondition) {
          const data = { ...bookingData, roomType: bookingData.roomType.type };
          console.log(data);
-         //dispatch(createBooking(data)) post
+         try {
+            setFinishBooking(true);
+            setIsBookingLoading(true);
+            await createBooking(data);
+            setIsBookingLoading(false);
+            setBookingData(initialState);
+         } catch (error) {
+            console.log(error);
+         }
       }
    };
 
@@ -135,7 +145,7 @@ const Payment = ({ bookingData, setBookingData }) => {
                         value={email}
                         onChange={handleMailChange}
                         required
-                        helperText="This is the Email we will send your confirmation to."
+                        helperText="This is the e-mail we will send your confirmation to."
                         InputProps={{
                            endAdornment: (
                               <InputAdornment position="end">
@@ -166,15 +176,25 @@ const Payment = ({ bookingData, setBookingData }) => {
          <div className="mb-8">
             <div className={styles.headText}>Address</div>
             <div className={styles.half}>
-               <TextField name="address" label="Address" fullWidth value={address} onChange={handleChange} required />
+               <TextField name="address" label="Country" fullWidth value={address} onChange={handleChange} required />
             </div>
          </div>
          <div className="mb-4">
             <div className={styles.headText}>Additional Details and Preferences</div>
             <TextField name="addition" multiline rows={4} placeholder="Please note your requests or special needs" fullWidth value={addition} onChange={handleChange} />
          </div>
-         <div className="mb-4">
+         <div className="mb-4 w-1/2">
             <div className={styles.headText}>Payment Information</div>
+            <TextField name="cardnumber" label="Card Number" fullWidth required />
+            <div className="flex my-4 space-x-3">
+               <div className="w-3/4">
+                  <TextField name="expdate" label="Expiration Date (MM/YY)" fullWidth required />
+               </div>
+               <div className="w-1/4">
+                  <TextField name="cvv" label="CVV" fullWidth required />
+               </div>
+            </div>
+            <TextField name="cardname" label="Name of Card" fullWidth required />
          </div>
          <div className="mb-4">
             <div className={`${styles.headText} mb-2`}>Policies</div>

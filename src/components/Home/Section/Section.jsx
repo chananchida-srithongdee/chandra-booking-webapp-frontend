@@ -11,7 +11,7 @@ const Section = ({ title, items, imgW, imgH, url }) => {
                (item, index) =>
                   index < 4 && (
                      <div key={index} className="mx-2">
-                        <Thumbnail imgW={imgW} imgH={imgH} imgSrc={item.img[0]} imgAlt="chandra service" head={item.title} detail={item.detail} url={`${url}/${item._id}`} />
+                        <Thumbnail imgW={imgW} imgH={imgH} imgSrc={item.img[0]} imgAlt="chandra service" head={item.title} detail={item.detail} url={`${url}/${item._id || item.type}`} />
                      </div>
                   ),
             )}

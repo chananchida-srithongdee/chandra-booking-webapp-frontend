@@ -1,4 +1,4 @@
-import { FETCH_ROOMS, FETCH_ROOM, START_LOADING, END_LOADING } from '../constants/actionTypes.js';
+import { FETCH_ROOMS, START_LOADING, END_LOADING } from '../constants/actionTypes.js';
 
 const roomsReducer = (state = { isLoading: true, rooms: [] }, action) => {
    switch (action.type) {
@@ -8,8 +8,6 @@ const roomsReducer = (state = { isLoading: true, rooms: [] }, action) => {
          return { ...state, isLoading: false };
       case FETCH_ROOMS:
          return { ...state, rooms: action.payload.data };
-      case FETCH_ROOM:
-         return { ...state, room: action.payload.data };
       default:
          return state;
    }
