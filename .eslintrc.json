@@ -4,7 +4,7 @@
       "es2021": true,
       "jest": true
    },
-   "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+   "extends": ["eslint:recommended", "prettier"],
    "overrides": [],
    "parserOptions": {
       "ecmaFeatures": {
@@ -18,7 +18,7 @@
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "quotes": ["warn", "single"],
-      "no-unused-vars": "warn",
+      "no-unused-vars": "off",
       "no-undef": "warn"
    }
 }

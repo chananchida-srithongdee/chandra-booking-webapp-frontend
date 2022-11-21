@@ -13,12 +13,11 @@ const OfferDetails = ({ setNavbarBg }) => {
    const offer = offers.filter(({ _id }) => _id === id)[0];
    const otherOffer = offers.filter(({ _id }) => _id !== id);
 
-   // useEffect(() => {
-   //     dispatch(getOffer(id));
-   // }, [id])
-
    useEffect(() => {
       setNavbarBg('bg-primary');
+   }, []);
+
+   useEffect(() => {
       window.scrollTo(0, 0);
    }, [id]);
 
@@ -68,7 +67,7 @@ const OfferDetails = ({ setNavbarBg }) => {
             <div className="flex xl:hover:overflow-x-scroll overflow-x-scroll mt-5 pb-5">
                {otherOffer.map(({ img, _id, title, detail }) => (
                   <div key={_id}>
-                     <Thumbnail imgW="270px" imgH="340px" imgSrc={img[0]} imgAlt="chandra service" head={title} detail={detail} linkTo={`${offerUrl}/details/${_id}`} />
+                     <Thumbnail imgW="270px" imgH="340px" imgSrc={img[0]} imgAlt="chandra service" head={title} detail={detail} url={`${offerUrl}/details/${_id}`} />
                   </div>
                ))}
             </div>
