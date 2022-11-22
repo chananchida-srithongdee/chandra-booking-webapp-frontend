@@ -21,13 +21,3 @@ export const getRoomsByDateGuest = (checkIn_date, checkOut_date, guest) => async
       console.log(error);
    }
 };
-
-// export const getRoomsFullDate = () => async (dispatch) => {
-//     try {
-//         const { data } = await api.fetchRoomsFullDate();
-
-//         return data;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };

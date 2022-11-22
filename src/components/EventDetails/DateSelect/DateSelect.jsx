@@ -31,7 +31,7 @@ const DateSelect = ({ eventData, setEventData }) => {
    }, [date]);
 
    return (
-      <div className="relative flex-initial sm:w-[700px] w-5/6 mx-auto border rounded-md border-black/20 mb-10">
+      <div className="relative flex-initial sm:w-[700px] w-5/6 border rounded-md border-black/20 mb-10">
          <div className={`${styles.selectBtn} flex w-full`} onClick={handleDateShow}>
             <div className="flex-1">
                <div className={`${styles.headText}`}>Event Start</div>

@@ -25,6 +25,8 @@ const EventDetails = ({ setNavbarBg }) => {
       addition: '',
       start: '',
       end: '',
+      place: '',
+      type: '',
    };
    const { id } = useParams();
    const event = events.filter(({ _id }) => _id === id)[0];
@@ -32,7 +34,7 @@ const EventDetails = ({ setNavbarBg }) => {
    const [isBookingLoading, setIsBookingLoading] = useState(true);
 
    const [value, setValue] = useState([100000, 3000000]);
-   const [eventData, setEventData] = useState(initialState);
+   const [eventData, setEventData] = useState({ ...initialState, type: event.type });
    const submitCondition =
       eventData.prefix &&
       eventData.fname &&
@@ -45,6 +47,8 @@ const EventDetails = ({ setNavbarBg }) => {
       eventData.min_budget &&
       eventData.max_budget &&
       eventData.company &&
+      eventData.type &&
+      eventData.place &&
       eventData.zip;
 
    const handleSliderChange = (e, newValue) => {
@@ -112,7 +116,8 @@ const EventDetails = ({ setNavbarBg }) => {
                ))}
             </div>
          </div>
-         <div className="w-full mt-[10rem] mb-[4rem] text-center xs:text-4xl text-3xl font-bold">Request for a Proposal</div>
+         <div className="w-full mt-[10rem] text-center xs:text-4xl text-3xl font-bold text-primary/80">Request for a Proposal</div>
+         <div className="w-full mb-[4rem] mt-5 text-center xs:text-4xl text-3xl font-bold">{event.eventtype}</div>
          {finishBooking ? (
             isBookingLoading ? (
                <div className="lg:w-2/3 w-full caret-transparent flex justify-center">
@@ -135,7 +140,18 @@ const EventDetails = ({ setNavbarBg }) => {
             )
          ) : (
             <>
-               <DateSelect eventData={eventData} setEventData={setEventData} />
+               <div className="flex w-1/2 mx-auto space-x-5">
+                  <DateSelect eventData={eventData} setEventData={setEventData} />
+                  <div className="w-1/6">
+                     <TextField select name="place" label="Place" value={eventData.place} onChange={handleChange} fullWidth required>
+                        {event.place.map((p) => (
+                           <MenuItem key={p.value} value={p.value}>
+                              {p.label}
+                           </MenuItem>
+                        ))}
+                     </TextField>
+                  </div>
+               </div>
                <div className="flex flex-row flex-wrap justify-center items-center w-full">
                   <form className="flex flex-col justify-center items-center gap-4 w-full" onSubmit={handleSubmit}>
                      <div className="flex justify-center items-center md:w-2/3 w-5/6 sm:flex-row flex-col">
