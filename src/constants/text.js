@@ -316,9 +316,24 @@ export const policies = [
 export const events = [
    {
       _id: '1',
+      type: 'Wedding',
       mainImg: wd_1,
       dataImg: wdm_1,
       otherImg: [wdm_2, wdm_3],
+      place: [
+         {
+            value: 'Hall',
+            label: 'Hall',
+         },
+         {
+            value: 'Yard',
+            label: 'Yard',
+         },
+         {
+            value: 'Beach',
+            label: 'Beach',
+         },
+      ],
       eventtype: 'Wedding Events',
       title: 'Tie the Knot in Paradise',
       detail: 'Make your wedding day even more memorable with a beachfront setting and dedicated events team to exceed your dreams at Chandra',
@@ -333,9 +348,20 @@ export const events = [
    },
    {
       _id: '2',
+      type: 'Corporate',
       mainImg: co_1,
       dataImg: com_1,
       otherImg: [com_2, com_3],
+      place: [
+         {
+            value: 'Meet1',
+            label: 'Meet1',
+         },
+         {
+            value: 'Meet2',
+            label: 'Meet2',
+         },
+      ],
       eventtype: 'Corporate Events',
       title: 'Strengthen work relationships in a serene tropical atmosphere',
       detail: 'Opportunity to synergise with team building and corporate retreats at Chandra',
@@ -350,9 +376,24 @@ export const events = [
    },
    {
       _id: '3',
+      type: 'Social',
       mainImg: so_1,
       dataImg: som_1,
       otherImg: [som_2, som_3],
+      place: [
+         {
+            value: 'Hall',
+            label: 'Hall',
+         },
+         {
+            value: 'Yard',
+            label: 'Yard',
+         },
+         {
+            value: 'Beach',
+            label: 'Beach',
+         },
+      ],
       eventtype: 'Social Events',
       title: 'Special Occasions to Remember',
       detail: 'Bringing people together is what we do at Centara. We offer unforgettable venues, impeccable service and professional events management to make every occasion truly exceptional.',

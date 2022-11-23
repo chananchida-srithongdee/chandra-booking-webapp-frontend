@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
@@ -45,9 +45,6 @@ const Navbar = ({ navbarBg }) => {
                <Link to={homeUrl} onClick={handleClick}>
                   <img src={logo} alt="chandra" className="cursor-pointer sm:w-40 w-[150px] object-contained mr-20" />
                </Link>
-               <Link to={homeUrl}>
-                  <div className={styles.menuText}>Home</div>
-               </Link>
                <Link to={discoverUrl}>
                   <div className={styles.menuText}>Discover Chandra</div>
                </Link>
@@ -71,9 +68,6 @@ const Navbar = ({ navbarBg }) => {
             </div>
 
             <div className={`${toggle ? 'block' : 'hidden'} ${styles.menuTextContainer} ${(scrollY && toggle) || bgMenuDrop ? 'bgfadeyellow' : 'bg-slate-50/20'}`}>
-               <Link to={homeUrl} onClick={handleClick}>
-                  <div className={styles.menuTextCol}>Home</div>
-               </Link>
                <Link to={bookingUrl} onClick={handleClick}>
                   <div className={styles.menuTextCol}>Check Rates</div>
                </Link>
